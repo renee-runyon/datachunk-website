@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 /* ------------------------------------------- */
 /* VARIANTS (outside component — stable)       */
@@ -29,9 +30,6 @@ const navVariantsMobile = {
 	},
 };
 
-/* ------------------------------------------- */
-/* ITEM VARIANTS                               */
-/* ------------------------------------------- */
 const itemVariants = {
 	open: (custom) => ({
 		opacity: 1,
@@ -64,7 +62,6 @@ const NavItems = ({ isNavOpen, setIsNavOpen, isMobile }) => {
 		setIsNavOpen(false);
 	};
 
-	// Choose appropriate variant
 	const navVariant = isMobile ? navVariantsMobile : navVariantsDesktop;
 
 	return (
@@ -76,7 +73,6 @@ const NavItems = ({ isNavOpen, setIsNavOpen, isMobile }) => {
 		>
 			<div className="relative backdrop-blur-sm opacity-95 flex flex-col items-center min-h-[100vh] bg-gray-700 min-w-[100vw]">
 				<div className="flex flex-col items-center space-y-8 my-auto z-50">
-
 					<motion.h1
 						variants={itemVariants}
 						animate={isNavOpen ? "open" : "closed"}
@@ -128,7 +124,6 @@ const NavItems = ({ isNavOpen, setIsNavOpen, isMobile }) => {
 							Contact
 						</motion.h2>
 					</Link>
-
 				</div>
 			</div>
 		</motion.div>
@@ -136,14 +131,16 @@ const NavItems = ({ isNavOpen, setIsNavOpen, isMobile }) => {
 };
 
 /* ------------------------------------------- */
-/* NAVBAR SHELL                                */
+/* NAVBAR SHELL (REWRITTEN & FIXED)            */
 /* ------------------------------------------- */
 const Navbar = () => {
 	const navRef = useRef(null);
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
 
-	// Determine mobile vs desktop ONCE
+	const pathname = usePathname();
+	const isHome = pathname === "/";
+
 	useEffect(() => {
 		const checkScreen = () => {
 			setIsMobile(window.innerWidth <= 768);
@@ -160,29 +157,31 @@ const Navbar = () => {
 			<nav
 				ref={navRef}
 				className={`navbar px-5 md:px-24 w-screen fixed transition-colors duration-500
-          ${isNavOpen ? "bg-gray-700 bg-opacity-50" : "backdrop-blur-md"}
-          inset-0 flex justify-between items-center h-16 z-50`}
+        ${isNavOpen ? "bg-gray-700 bg-opacity-50" : "backdrop-blur-md"}
+        inset-0 flex justify-between items-center h-16 z-50`}
 			>
-				<h1 className={`text-2xl transition-colors duration-500 ${isNavOpen ? "text-white" : ""}`}>
-					Datachunk
-				</h1>
-
+				{/* Hamburger stays always */}
 				<button
-					className="burger button flex flex-col justify-center items-center space-y-1.5"
+					className="burger button flex flex-col justify-center items-center space-y-1.5 ml-auto cursor-pointer"
 					onClick={toggleNav}
 				>
+
 					<div
 						className={`w-10 h-1 bg-black rounded-full transition-all duration-300 
-              ${isNavOpen ? "rotate-45 bg-white translate-y-[2px]" : ""}`}
+            ${isNavOpen ? "rotate-45 bg-white translate-y-[2px]" : ""}`}
 					></div>
 					<div
 						className={`w-10 h-1 bg-black rounded-full transition-all duration-300 
-              ${isNavOpen ? "-rotate-45 -translate-y-2 bg-white" : ""}`}
+            ${isNavOpen ? "-rotate-45 -translate-y-2 bg-white" : ""}`}
 					></div>
 				</button>
 			</nav>
 
-			<NavItems isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} isMobile={isMobile} />
+			<NavItems
+				isNavOpen={isNavOpen}
+				setIsNavOpen={setIsNavOpen}
+				isMobile={isMobile}
+			/>
 		</>
 	);
 };
