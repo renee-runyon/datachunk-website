@@ -24,8 +24,8 @@ importers:
         specifier: ^0.2.2
         version: 0.2.2(@fortawesome/fontawesome-svg-core@6.7.2)(react@19.0.0)
       '@fullpage/react-fullpage':
-        specifier: ^0.1.48
-        version: 0.1.48
+        specifier: 0.1.46
+        version: 0.1.46
       '@tailwindcss/postcss':
         specifier: ^4.0.14
         version: 4.0.14
@@ -41,6 +41,9 @@ importers:
       framer-motion:
         specifier: ^12.5.0
         version: 12.5.0(@emotion/is-prop-valid@0.8.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      fullpage.js:
+        specifier: ^3.1.2
+        version: 3.1.2
       next:
         specifier: 15.2.3
         version: 15.2.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -175,8 +178,8 @@ packages:
       '@fortawesome/fontawesome-svg-core': ~1 || ~6
       react: '>=16.3'
 
-  '@fullpage/react-fullpage@0.1.48':
-    resolution: {integrity: sha512-QeIfQJyMW/35Ckj7FksOJHxypvarzTgrdM8UAas5kTf6W+8WEybt0CYPfsy1jEStl8SoRPrmYjGWwxBeja7pxA==}
+  '@fullpage/react-fullpage@0.1.46':
+    resolution: {integrity: sha512-KSXhdrrYZv/kIokd3OSHkicmE67/EIaOrtW5FQlmCZlr7lsYMyGytfz3wjY7jDDPz28mvT0/cEsYJr53+7iflQ==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1069,6 +1072,9 @@ packages:
         optional: true
       react-dom:
         optional: true
+
+  fullpage.js@3.1.2:
+    resolution: {integrity: sha512-hv7z6xhbg2StTp1UDq2hi+0oHjhT7cW3zCL3qCIJ3ood5pN0FRBQ2YKIOUobhsp4ATSQlr6sZ2TOcS+Ha+T7Cg==}
 
   fullpage.js@4.0.34:
     resolution: {integrity: sha512-jLZrqhK9PDRdpN82UwbNLYaINjZTGbBahV6FASP4b1yXaS8U3G+ty2nZ+XIIfjN08Ej0UgvSfPnmWDR7CWxwNw==}
@@ -1991,7 +1997,7 @@ snapshots:
       prop-types: 15.8.1
       react: 19.0.0
 
-  '@fullpage/react-fullpage@0.1.48':
+  '@fullpage/react-fullpage@0.1.46':
     dependencies:
       '@babel/polyfill': 7.12.1
       fullpage.js: 4.0.34
@@ -2966,6 +2972,8 @@ snapshots:
       '@emotion/is-prop-valid': 0.8.8
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
+
+  fullpage.js@3.1.2: {}
 
   fullpage.js@4.0.34: {}
 
