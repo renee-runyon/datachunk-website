@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Optional: remove this line until you have a real sitemap
+# Sitemap: https://YOURDOMAIN.com/sitemap.xml
