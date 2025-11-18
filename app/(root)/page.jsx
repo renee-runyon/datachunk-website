@@ -19,10 +19,10 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function MyPage() {
 	return (
-		<div className="snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth">
+		<div className="snap-y snap-mandatory h-screen overflow-y-scroll overflow-x-hidden scroll-smooth">
 
 			{/* ================= HOME ================= */}
-			<section id="home" className="snap-start min-h-screen flex items-center pt-24">
+			<section id="home" className="snap-start min-h-screen flex items-center pt-12">
 				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
 					{/* LEFT SIDE TEXT */}

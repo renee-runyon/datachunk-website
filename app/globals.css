@@ -24,10 +24,15 @@ html {
 body {
 	font-family: 'Poppins', sans-serif !important;
 	color: black;
-	background-color: rgb(230, 230, 230);
+	background-color: #fffbeb;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: 'Jost', sans-serif !important;
 }
 
@@ -75,7 +80,8 @@ li.active:after {
 
 }
 
-td, th {
+td,
+th {
 	@apply py-2 px-3;
 }
 
