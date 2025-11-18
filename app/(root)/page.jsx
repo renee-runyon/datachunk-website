@@ -115,7 +115,7 @@ export default function MyPage() {
 			</section>
 
 			{/* ================= ABOUT ================= */}
-			<section id="about" className="snap-start min-h-screen flex items-center">
+			<section id="about" className="snap-start min-h-screen flex items-center pt-24">
 				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
 					{/* IMAGE */}
@@ -123,15 +123,15 @@ export default function MyPage() {
 						className="flex justify-center md:justify-end order-1 md:order-2"
 						initial={{ x: 80, opacity: 0 }}
 						whileInView={{ x: 0, opacity: 1 }}
-						transition={{ type: 'tween', ease: 'easeInOut' }}
+						transition={{ type: "tween", ease: "easeInOut" }}
 					>
 						<div className="relative bg-slate-300 rounded-4xl overflow-hidden
-                      h-[350px] md:h-[550px] w-full md:w-[28vw]
+                      h-[280px] md:h-[420px] w-full md:w-[28vw]
                       grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
 								src={Goldfinch}
 								alt="About"
-								layout="fill"
+								fill
 								className="object-cover"
 								placeholder="blur"
 							/>
@@ -143,7 +143,7 @@ export default function MyPage() {
 						className="flex flex-col justify-center md:pl-10 order-2 md:order-1"
 						initial={{ x: -80, opacity: 0 }}
 						whileInView={{ x: 0, opacity: 1 }}
-						transition={{ type: 'tween', ease: 'easeInOut' }}
+						transition={{ type: "tween", ease: "easeInOut" }}
 					>
 						<h1 className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold">
 							About Us
@@ -168,8 +168,9 @@ export default function MyPage() {
 
 
 
+
 			{/* ================= PROJECTS ================= */}
-			<section id="projects" className="snap-start min-h-screen flex items-center">
+			<section id="projects" className="snap-start min-h-screen flex items-center pt-24">
 				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
 					{/* IMAGE */}
