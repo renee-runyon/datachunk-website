@@ -79,20 +79,19 @@ export default function MyPage() {
 
 						{/* BUTTONS */}
 						<motion.div
-							className="flex flex-row justify-center space-x-4 mt-10"
+							className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 mt-10"
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ delay: 1.1, type: "tween", ease: "easeInOut" }}
 						>
-							<Button variation="primary" className="w-[50vw] text-center">
-								<a href="#about" className="block w-full">Learn More</a>
+							<Button variation="primary">
+								<a href="#about">Learn More</a>
 							</Button>
 
-							<Button variation="secondary" className="w-[50vw] text-center">
-								<a href="#contact" className="block w-full">Contact Us</a>
+							<Button variation="secondary">
+								<a href="#contact">Contact Us</a>
 							</Button>
 						</motion.div>
-
 					</motion.div>
 
 					{/* RIGHT SIDE IMAGE (DESKTOP ONLY) */}
@@ -131,14 +130,21 @@ export default function MyPage() {
 						whileInView={{ x: 0, opacity: 1 }}
 						transition={{ type: "tween", ease: "easeInOut" }}
 					>
-						<div className="relative bg-transparent rounded-4xl overflow-hidden
-                      h-[480px] md:h-[320px] sm:h-[320px] w-full md:w-[28vw]
-                      grayscale hover:grayscale-0 transition-all duration-300">
+						<div
+							className="
+          relative rounded-4xl overflow-hidden
+          h-[28vh]                /* MUCH SHORTER on mobile */
+          sm:h-[32vh]             /* Slight bump on small tablets */
+          md:h-[55vh]             /* Tall and nice on desktop */
+          w-full md:w-[30vw]
+          grayscale hover:grayscale-0 transition-all duration-300
+        "
+						>
 							<Image
 								src={Goldfinch}
 								alt="About"
 								fill
-								className="object-cover"
+								className="object-cover object-center"
 								placeholder="blur"
 							/>
 						</div>
@@ -170,6 +176,7 @@ export default function MyPage() {
 			</section>
 
 
+
 			{/* ================= PORTFOLIO ================= */}
 			<section id="projects" className="snap-start min-h-screen flex items-center pt-8">
 				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
@@ -181,14 +188,21 @@ export default function MyPage() {
 						whileInView={{ x: 0, opacity: 1 }}
 						transition={{ type: "tween", ease: "easeInOut" }}
 					>
-						<div className="relative bg-transparent rounded-4xl overflow-hidden
-                      h-[480px] md:h-[320px] sm:h-[320px] w-full md:w-[28vw]
-                      grayscale hover:grayscale-0 transition-all duration-300">
+						<div
+							className="
+          relative bg-transparent rounded-4xl overflow-hidden
+          h-[28vh]                 /* MOBILE: short */
+          sm:h-[32vh]              /* small tablets */
+          md:h-[55vh]              /* DESKTOP tall */
+          w-full md:w-[30vw]
+          grayscale hover:grayscale-0 transition-all duration-300
+        "
+						>
 							<Image
 								src={Lighthouse}
 								alt="Projects"
 								fill
-								className="object-cover"
+								className="object-cover object-center"
 								placeholder="blur"
 							/>
 						</div>
@@ -232,14 +246,21 @@ export default function MyPage() {
 						whileInView={{ x: 0, opacity: 1 }}
 						transition={{ type: "tween", ease: "easeInOut" }}
 					>
-						<div className="relative bg-transparent rounded-4xl overflow-hidden
-                      h-[480px] md:h-[320px] sm:h-[320px] w-full md:w-[28vw]
-                      grayscale hover:grayscale-0 transition-all duration-300">
+						<div
+							className="
+          relative bg-transparent rounded-4xl overflow-hidden
+          h-[28vh]                 /* MOBILE short */
+          sm:h-[32vh]              /* small tablets */
+          md:h-[55vh]              /* DESKTOP tall */
+          w-full md:w-[30vw]
+          grayscale hover:grayscale-0 transition-all duration-300
+        "
+						>
 							<Image
 								src={Cranberry}
 								alt="Contact"
 								fill
-								className="object-cover"
+								className="object-cover object-center"
 								placeholder="blur"
 							/>
 						</div>
@@ -291,6 +312,8 @@ export default function MyPage() {
 
 				</div>
 			</section>
+
+
 
 
 
