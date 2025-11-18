@@ -1,3 +1,4 @@
+import { easeInOut } from "framer-motion";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 export default function Hr({ variant }) {
@@ -17,7 +18,7 @@ export default function Hr({ variant }) {
 						}}
 						transition={{
 							delay: 0.3,
-							type: "spring",
+							type: "tween",
 						}}></motion.div>
 					<motion.div
 						className="bg-gray-700 w-28 h-1 rounded-full"
@@ -31,7 +32,7 @@ export default function Hr({ variant }) {
 						}}
 						transition={{
 							delay: 0.4,
-							type: "spring",
+							type: "tween",
 						}}></motion.div>
 				</>
 			) : (
@@ -48,7 +49,7 @@ export default function Hr({ variant }) {
 						}}
 						transition={{
 							delay: 0.2,
-							type: "spring",
+							type: "tween",
 						}}></motion.div>
 					<motion.div
 						className="bg-gray-700 w-20 h-1 rounded-full"
@@ -62,7 +63,7 @@ export default function Hr({ variant }) {
 						}}
 						transition={{
 							delay: 0.3,
-							type: "spring",
+							type: "tween",
 						}}></motion.div>
 				</div>
 			)}

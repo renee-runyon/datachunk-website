@@ -157,7 +157,7 @@ const Navbar = () => {
 			<nav
 				ref={navRef}
 				className={`navbar px-5 md:px-24 w-screen fixed transition-colors duration-500
-        ${isNavOpen ? "bg-gray-700 bg-opacity-50" : "backdrop-blur-md"}
+        ${isNavOpen ? "bg-sky-950 bg-opacity-50" : "backdrop-blur-md"}
         inset-0 flex justify-between items-center h-16 z-50`}
 			>
 				{/* Hamburger stays always */}

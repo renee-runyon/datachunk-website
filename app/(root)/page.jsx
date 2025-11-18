@@ -6,6 +6,7 @@ import Link from "next/link";
 
 // components
 import Button from "@/components/Button";
+import Logo from "@/public/image/dcd-logo.png";
 import Beach from "@/public/image/beach.jpg";
 import Cranberry from "@/public/image/cranberry.jpg";
 import Lighthouse from "@/public/image/lighthouse.jpeg";
@@ -22,7 +23,7 @@ export default function MyPage() {
 		<div className="snap-y snap-mandatory h-screen overflow-y-scroll overflow-x-hidden scroll-smooth">
 
 			{/* ================= HOME ================= */}
-			<section id="home" className="snap-start min-h-screen flex items-center pt-12">
+			<section id="home" className="snap-start min-h-screen flex items-center pt-8">
 				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
 					{/* LEFT SIDE TEXT */}
@@ -78,19 +79,20 @@ export default function MyPage() {
 
 						{/* BUTTONS */}
 						<motion.div
-							className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 mt-10"
+							className="flex flex-row justify-center space-x-4 mt-10"
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ delay: 1.1, type: "tween", ease: "easeInOut" }}
 						>
-							<Button variation="primary">
-								<a href="#about">Learn More</a>
+							<Button variation="primary" className="w-[50vw] text-center">
+								<a href="#about" className="block w-full">Learn More</a>
 							</Button>
 
-							<Button variation="secondary">
-								<a href="#contact">Contact Us</a>
+							<Button variation="secondary" className="w-[50vw] text-center">
+								<a href="#contact" className="block w-full">Contact Us</a>
 							</Button>
 						</motion.div>
+
 					</motion.div>
 
 					{/* RIGHT SIDE IMAGE (DESKTOP ONLY) */}
@@ -119,7 +121,7 @@ export default function MyPage() {
 
 
 			{/* ================= ABOUT ================= */}
-			<section id="about" className="snap-start min-h-screen flex items-center pt-24">
+			<section id="about" className="snap-start min-h-screen flex items-center pt-8">
 				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
 					{/* IMAGE */}
@@ -129,8 +131,8 @@ export default function MyPage() {
 						whileInView={{ x: 0, opacity: 1 }}
 						transition={{ type: "tween", ease: "easeInOut" }}
 					>
-						<div className="relative bg-slate-300 rounded-4xl overflow-hidden
-                      h-[280px] md:h-[420px] w-full md:w-[28vw]
+						<div className="relative bg-transparent rounded-4xl overflow-hidden
+                      h-[480px] md:h-[320px] sm:h-[320px] w-full md:w-[28vw]
                       grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
 								src={Goldfinch}
@@ -168,13 +170,8 @@ export default function MyPage() {
 			</section>
 
 
-
-
-
-
-
-			{/* ================= PROJECTS ================= */}
-			<section id="projects" className="snap-start min-h-screen flex items-center pt-24">
+			{/* ================= PORTFOLIO ================= */}
+			<section id="projects" className="snap-start min-h-screen flex items-center pt-8">
 				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
 					{/* IMAGE */}
@@ -184,8 +181,8 @@ export default function MyPage() {
 						whileInView={{ x: 0, opacity: 1 }}
 						transition={{ type: "tween", ease: "easeInOut" }}
 					>
-						<div className="relative bg-slate-300 rounded-4xl overflow-hidden
-                      h-[280px] md:h-[420px] w-full md:w-[28vw]
+						<div className="relative bg-transparent rounded-4xl overflow-hidden
+                      h-[480px] md:h-[320px] sm:h-[320px] w-full md:w-[28vw]
                       grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
 								src={Lighthouse}
@@ -225,7 +222,7 @@ export default function MyPage() {
 
 
 			{/* ================= CONTACT ================= */}
-			<section id="contact" className="snap-start min-h-screen flex items-center pt-24">
+			<section id="contact" className="snap-start min-h-screen flex items-center pt-8">
 				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
 					{/* IMAGE */}
@@ -235,8 +232,8 @@ export default function MyPage() {
 						whileInView={{ x: 0, opacity: 1 }}
 						transition={{ type: "tween", ease: "easeInOut" }}
 					>
-						<div className="relative bg-slate-300 rounded-4xl overflow-hidden
-                      h-[280px] md:h-[420px] w-full md:w-[28vw]
+						<div className="relative bg-transparent rounded-4xl overflow-hidden
+                      h-[480px] md:h-[320px] sm:h-[320px] w-full md:w-[28vw]
                       grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
 								src={Cranberry}
@@ -261,33 +258,31 @@ export default function MyPage() {
 
 						<Hr />
 
-						<p className="text-xl mt-4 tracking-wider text-gray-500 mb-5">
+						<p className="text-xl mt-4 tracking-wider text-gray-600 mb-5">
 							Feel free to reach out with questions or collaboration ideas.
 						</p>
 
-						<p className="text-xl mt-2 tracking-wider text-gray-500 mb-5">
+						<p className="text-xl mt-2 tracking-wider text-gray-600 mb-5">
 							<a href="mailto:info@datachunkdesigns.com">info@datachunkdesigns.com</a>
 						</p>
 
-						<div className="flex space-x-4 mt-8">
+						<div className="flex space-x-4 mt-4 justify-center">
 							{[
 								{ icon: faEnvelope, href: "mailto:info@datachunkdesigns.com" },
-								{ icon: faGithub, href: "https://github.com/renee-runyon" },
-								{ icon: faInstagram, href: "https://www.instagram.com/" },
-								{ icon: faLinkedin, href: "https://www.linkedin.com/in/" },
-								{ icon: faDiscord, href: "https://discordapp.com/users/bloody#6118" },
+								{ icon: faGithub, href: "https://github.com/" },
+								{ icon: faLinkedin, href: "https://www.linkedin.com/company/datachunk-media-designs/" },
 							].map((item, idx) => (
 								<motion.a
 									key={idx}
 									href={item.href}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all duration-300"
+									className="flex justify-center items-center bg-sky-950 w-10 h-10 rounded-full text-gray-100 hover:bg-gray-400 transition-all duration-300"
 									initial={{ opacity: 0, y: 20 }}
 									whileInView={{ opacity: 1, y: 0 }}
 									transition={{ delay: 0.3 + idx * 0.1 }}
 								>
-									<FontAwesomeIcon icon={item.icon} className="text-3xl" />
+									<FontAwesomeIcon icon={item.icon} className="text-2xl" />
 								</motion.a>
 							))}
 						</div>
