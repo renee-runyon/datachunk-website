@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import goldfinch from "@/public/image/goldfinch.jpg";
-import lighthouse from "@/public/image/lighthouse.jpg";
-import cranberry from "@/public/image/cranberry.jpg";
+import Goldfinch from "@/public/image/goldfinch.jpg";
+import Lighthouse from "@/public/image/lighthouse.jpeg";
+import Cranberry from "@/public/image/cranberry.jpg";
 import Hr from "@/components/Hr";
 
 function Title() {
@@ -32,7 +32,7 @@ export default function About() {
 								}}
 								className="w-full h-full">
 								<Image
-									src={goldfinch}
+									src={Goldfinch}
 									alt="Goldfinch"
 									layout="fill"
 									objectFit="cover"
@@ -55,7 +55,7 @@ export default function About() {
 								transition={{ delay: 0.3 }}
 								className="w-full h-full">
 								<Image
-									src={lighthouse}
+									src={Lighthouse}
 									alt="Barnegat Light"
 									layout="fill"
 									objectFit="cover"
@@ -80,7 +80,7 @@ export default function About() {
 								}}
 								className="w-full h-full">
 								<Image
-									src={cranberry}
+									src={Cranberry}
 									alt="Cranberry bog"
 									layout="fill"
 									objectFit="cover"

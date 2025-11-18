@@ -6,10 +6,9 @@ import Link from "next/link";
 
 // components
 import Button from "@/components/Button";
-import Me from "@/public/image/me.jpg";
-import MeAbout from "@/public/image/me.jpg";
-import Setup from "@/public/image/setup.jpg";
-import ProjectAll from "@/public/image/projects.png";
+import Beach from "@/public/image/beach.jpg";
+import Cranberry from "@/public/image/cranberry.jpg";
+import Lighthouse from "@/public/image/lighthouse.jpeg";
 import Goldfinch from "@/public/image/goldfinch.jpg";
 import Hr from "@/components/Hr";
 
@@ -39,7 +38,7 @@ export default function MyPage() {
 							<div className="bg-slate-500 rounded-full h-60 w-60 
                                             grayscale hover:grayscale-0 transition-all duration-300">
 								<Image
-									src={Me}
+									src={Beach}
 									width={500}
 									height={500}
 									className="rounded-full object-cover"
@@ -102,11 +101,11 @@ export default function MyPage() {
 					>
 						<div className="rounded-full lg:px-12 grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
-								src={Goldfinch}
+								src={Beach}
 								width={400}
 								height={550}
 								placeholder="blur"
-								alt="Goldfinch Portrait"
+								alt="Beach image"
 								className="rounded-full object-cover"
 							/>
 						</div>
@@ -116,163 +115,158 @@ export default function MyPage() {
 			</section>
 
 			{/* ================= ABOUT ================= */}
-			<section id="about" className="snap-start h-screen flex items-center">
-				<div className="relative h-full w-full flex flex-col justify-center items-center overflow-hidden">
+			<section id="about" className="snap-start min-h-screen flex items-center">
+				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
 					{/* IMAGE */}
-					<div className="z-0 md:absolute top-1/4 md:right-[10%] md:-translate-y-16 mb-40 md:mb-0">
-						<motion.div
-							className="relative bg-slate-300 rounded-4xl overflow-hidden 
-                                       h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] 
-                                       grayscale hover:grayscale-0"
-						>
+					<motion.div
+						className="flex justify-center md:justify-end order-1 md:order-2"
+						initial={{ x: 80, opacity: 0 }}
+						whileInView={{ x: 0, opacity: 1 }}
+						transition={{ type: 'tween', ease: 'easeInOut' }}
+					>
+						<div className="relative bg-slate-300 rounded-4xl overflow-hidden
+                      h-[350px] md:h-[550px] w-full md:w-[28vw]
+                      grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
-								src={MeAbout}
-								layout="fill"
+								src={Goldfinch}
 								alt="About"
-								placeholder="blur"
+								layout="fill"
 								className="object-cover"
+								placeholder="blur"
 							/>
-						</motion.div>
-					</div>
+						</div>
+					</motion.div>
 
 					{/* TEXT */}
-					<div className="z-10 absolute md:left-[10%] top-[60%] md:top-1/3 px-10">
-						<motion.h1
-							className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold pt-12"
-							initial={{ x: -80, opacity: 0 }}
-							whileInView={{ x: 0, opacity: 1 }}
-							transition={{ delay: 0.1, type: "tween", ease: "easeInOut" }}
-						>
+					<motion.div
+						className="flex flex-col justify-center md:pl-10 order-2 md:order-1"
+						initial={{ x: -80, opacity: 0 }}
+						whileInView={{ x: 0, opacity: 1 }}
+						transition={{ type: 'tween', ease: 'easeInOut' }}
+					>
+						<h1 className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold">
 							About Us
-						</motion.h1>
+						</h1>
 
 						<Hr />
 
-						<motion.p
-							className="text-xl mt-4 tracking-wider text-gray-500 mb-5"
-							initial={{ x: -70, opacity: 0 }}
-							whileInView={{ x: 0, opacity: 1 }}
-							transition={{ delay: 0.2, type: "tween", ease: "easeInOut" }}
-						>
+						<p className="text-xl mt-4 tracking-wider text-gray-500 mb-5">
 							More about who we are and the services we offer.
-						</motion.p>
+						</p>
 
 						<Button variation="primary">
 							<Link href="/about">Learn More</Link>
 						</Button>
-					</div>
+					</motion.div>
 
 				</div>
 			</section>
 
+
+
+
+
+
 			{/* ================= PROJECTS ================= */}
-			<section id="projects" className="snap-start h-screen flex items-center">
-				<div className="relative h-full w-full flex flex-col justify-center items-center overflow-hidden p-10">
+			<section id="projects" className="snap-start min-h-screen flex items-center">
+				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
 					{/* IMAGE */}
-					<div className="z-0 md:absolute top-1/4 md:right-[10%] md:-translate-y-16 mb-40 md:mb-0">
-						<motion.div
-							className="relative bg-slate-300 rounded-4xl overflow-hidden 
-                                       h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] 
-                                       grayscale hover:grayscale-0"
-						>
+					<motion.div
+						className="flex justify-center md:justify-end order-1 md:order-2"
+						initial={{ x: 80, opacity: 0 }}
+						whileInView={{ x: 0, opacity: 1 }}
+						transition={{ type: "tween", ease: "easeInOut" }}
+					>
+						<div className="relative bg-slate-300 rounded-4xl overflow-hidden
+                      h-[350px] md:h-[550px] w-full md:w-[28vw]
+                      grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
-								src={ProjectAll}
-								layout="fill"
+								src={Lighthouse}
 								alt="Projects"
-								placeholder="blur"
+								layout="fill"
 								className="object-cover"
+								placeholder="blur"
 							/>
-						</motion.div>
-					</div>
+						</div>
+					</motion.div>
 
 					{/* TEXT */}
-					<div className="z-10 absolute md:left-[10%] top-[60%] md:top-1/3 px-10">
-						<motion.h1
-							className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold pt-12"
-							initial={{ x: -80, opacity: 0 }}
-							whileInView={{ x: 0, opacity: 1 }}
-							transition={{ delay: 0.1, type: "tween", ease: "easeInOut" }}
-						>
+					<motion.div
+						className="flex flex-col justify-center md:pl-10 order-2 md:order-1"
+						initial={{ x: -80, opacity: 0 }}
+						whileInView={{ x: 0, opacity: 1 }}
+						transition={{ type: "tween", ease: "easeInOut" }}
+					>
+						<h1 className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold">
 							Our Portfolio
-						</motion.h1>
+						</h1>
 
 						<Hr />
 
-						<motion.p
-							className="text-xl mt-4 tracking-wider text-gray-500 mb-5"
-							initial={{ opacity: 0, x: -70 }}
-							whileInView={{ opacity: 1, x: 0 }}
-							transition={{ delay: 0.2, type: "tween", ease: "easeInOut" }}
-						>
+						<p className="text-xl mt-4 tracking-wider text-gray-500 mb-5">
 							A look at some of our work — past and present.
-						</motion.p>
+						</p>
 
 						<Button variation="primary">
 							<Link href="/projects">Learn More</Link>
 						</Button>
-					</div>
+					</motion.div>
 
 				</div>
 			</section>
 
+
 			{/* ================= CONTACT ================= */}
-			<section id="contact" className="snap-start h-screen flex items-center">
-				<div className="relative h-full w-full flex flex-col justify-center items-center overflow-hidden p-10">
+			<section id="contact" className="snap-start min-h-screen flex items-center">
+				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
 					{/* IMAGE */}
-					<div className="z-0 md:absolute top-1/4 md:right-[10%] md:-translate-y-16 mb-40 md:mb-0">
-						<motion.div
-							className="relative bg-slate-300 rounded-4xl overflow-hidden 
-                                       h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] 
-                                       grayscale hover:grayscale-0"
-						>
+					<motion.div
+						className="flex justify-center md:justify-end order-1 md:order-2"
+						initial={{ x: 80, opacity: 0 }}
+						whileInView={{ x: 0, opacity: 1 }}
+						transition={{ type: "tween", ease: "easeInOut" }}
+					>
+						<div className="relative bg-slate-300 rounded-4xl overflow-hidden
+                      h-[350px] md:h-[550px] w-full md:w-[28vw]
+                      grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
-								src={Setup}
-								layout="fill"
+								src={Cranberry}
 								alt="Contact"
-								placeholder="blur"
+								layout="fill"
 								className="object-cover"
+								placeholder="blur"
 							/>
-						</motion.div>
-					</div>
+						</div>
+					</motion.div>
 
 					{/* TEXT */}
-					<div className="z-10 absolute md:left-[10%] top-[60%] md:top-1/3 px-10">
-						<motion.h1
-							className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold pt-12"
-							initial={{ x: -80, opacity: 0 }}
-							whileInView={{ x: 0, opacity: 1 }}
-							transition={{ delay: 0.1, type: "tween", ease: "easeInOut" }}
-						>
+					<motion.div
+						className="flex flex-col justify-center md:pl-10 order-2 md:order-1"
+						initial={{ x: -80, opacity: 0 }}
+						whileInView={{ x: 0, opacity: 1 }}
+						transition={{ type: "tween", ease: "easeInOut" }}
+					>
+						<h1 className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold">
 							Get In Touch
-						</motion.h1>
+						</h1>
 
 						<Hr />
 
-						<motion.p
-							className="text-xl mt-4 tracking-wider text-gray-500 mb-5"
-							initial={{ x: -70, opacity: 0 }}
-							whileInView={{ x: 0, opacity: 1 }}
-							transition={{ delay: 0.2, type: "tween", ease: "easeInOut" }}
-						>
+						<p className="text-xl mt-4 tracking-wider text-gray-500 mb-5">
 							Feel free to reach out with questions or collaboration ideas.
-						</motion.p>
+						</p>
 
-						<motion.p
-							className="text-xl mt-4 tracking-wider text-gray-500 mb-5"
-							initial={{ opacity: 0 }}
-							whileInView={{ opacity: 1 }}
-							transition={{ delay: 0.3 }}
-						>
+						<p className="text-xl mt-2 tracking-wider text-gray-500 mb-5">
 							<a href="mailto:info@datachunkdesigns.com">
 								info@datachunkdesigns.com
 							</a>
-						</motion.p>
+						</p>
 
 						{/* ICONS */}
-						<div className="flex space-x-4 mt-12">
+						<div className="flex space-x-4 mt-8">
 							{[
 								{ icon: faEnvelope, href: "mailto:info@datachunkdesigns.com" },
 								{ icon: faGithub, href: "https://github.com/renee-runyon" },
@@ -294,10 +288,11 @@ export default function MyPage() {
 								</motion.a>
 							))}
 						</div>
+					</motion.div>
 
-					</div>
 				</div>
 			</section>
+
 
 		</div>
 	);

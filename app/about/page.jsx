@@ -10,7 +10,7 @@ import Skills from "./components/skills/skills.jsx";
 
 
 // images
-import Hero from "@/public/image/me.jpg";
+import Beach from "@/public/image/beach.jpg";
 
 import Hr from "@/components/Hr";
 import About from "./components/about/about.jsx";
@@ -38,7 +38,7 @@ export default function Page() {
 							transition={{ ease: "circOut", duration: 1 }}
 							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0 ">
 							<Image
-								src={Hero}
+								src={Beach}
 								alt="Datachunk Media Designs"
 								layout="fill"
 								objectFit="cover"
