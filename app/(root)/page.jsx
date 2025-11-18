@@ -29,7 +29,7 @@ export default function MyPage() {
 						className="col-span-2 flex flex-col justify-center items-center md:items-start text-center md:text-start"
 						initial={{ x: -80, opacity: 0 }}
 						whileInView={{ x: 0, opacity: 1 }}
-						transition={{ type: "spring" }}
+						transition={{ type: "tween", ease: "easeInOut" }}
 					>
 						<div className="block md:hidden mx-auto my-10">
 							<div className="bg-slate-500 rounded-full h-60 w-60 grayscale hover:grayscale-0 transition-all duration-300">
@@ -48,7 +48,7 @@ export default function MyPage() {
 							className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold my-2 md:my-5"
 							initial={{ opacity: 0, y: -40 }}
 							whileInView={{ opacity: 1, y: 0 }}
-							transition={{ delay: 0.2, type: "spring" }}
+							transition={{ delay: 0.2, type: "tween", ease: "easeInOut" }}
 						>
 							Datachunk Media Designs
 						</motion.h1>
@@ -61,11 +61,11 @@ export default function MyPage() {
 						].map((text, i) => (
 							<motion.p
 								key={i}
-								className={`title text-md 2xl:text-xl mt-2 tracking-wider ${i === 0 ? "text-sky-800 mt-4" : "text-gray-500"
+								className={`title text-xl 2xl:text-xl mt-2 tracking-wider ${i === 0 ? "text-sky-800 mt-4" : "text-gray-500"
 									}`}
 								initial={{ x: -60, opacity: 0 }}
 								whileInView={{ x: 0, opacity: 1 }}
-								transition={{ delay: 0.3 + i * 0.15, type: "spring" }}
+								transition={{ delay: 0.3 + i * 0.15, type: "tween", ease: "easeInOut" }}
 							>
 								{text}
 							</motion.p>
@@ -75,7 +75,7 @@ export default function MyPage() {
 							className="flex space-x-4 mt-10"
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
-							transition={{ delay: 1.1, type: "spring" }}
+							transition={{ delay: 1.1, type: "tween", ease: "easeInOut" }}
 						>
 							<Button variation="primary">
 								<a href="#about">Learn More</a>
@@ -91,7 +91,7 @@ export default function MyPage() {
 						className="hidden md:flex justify-center items-center"
 						initial={{ x: 80, opacity: 0 }}
 						whileInView={{ x: 0, opacity: 1 }}
-						transition={{ delay: 0.6, type: "spring" }}
+						transition={{ delay: 0.6, type: "tween", ease: "easeInOut" }}
 					>
 						<div className="rounded-full lg:px-12 grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
@@ -117,7 +117,7 @@ export default function MyPage() {
 							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
 							initial={{ opacity: 0, x: 100 }}
 							whileInView={{ opacity: 1, x: 0 }}
-							transition={{ delay: 0.5, type: "spring" }}
+							transition={{ delay: 0.5, type: "tween", ease: "easeInOut" }}
 						>
 							<Image src={MeAbout} layout="fill" className="object-cover" alt="About" placeholder="blur" />
 						</motion.div>
@@ -129,7 +129,7 @@ export default function MyPage() {
 							className="bg-white md:bg-transparent bg-opacity-50 px-3 py-4 text-black text-5xl md:text-8xl font-bold"
 							initial={{ x: -80, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
-							transition={{ delay: 0.1, type: "spring" }}
+							transition={{ delay: 0.1, type: "tween", ease: "easeInOut" }}
 						>
 							About Us
 						</motion.h1>
@@ -140,7 +140,7 @@ export default function MyPage() {
 							className="text-xl mt-4 tracking-wider text-gray-500 mb-5"
 							initial={{ x: -70, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
-							transition={{ delay: 0.2, type: "spring" }}
+							transition={{ delay: 0.2, type: "tween", ease: "easeInOut" }}
 						>
 							More about who we are and the services we offer.
 						</motion.p>
@@ -162,7 +162,7 @@ export default function MyPage() {
 							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
 							initial={{ opacity: 0, x: 100 }}
 							whileInView={{ opacity: 1, x: 0 }}
-							transition={{ delay: 0.5, type: "spring" }}
+							transition={{ delay: 0.5, type: "tween", ease: "easeInOut" }}
 						>
 							<Image src={ProjectAll} layout="fill" className="object-cover" alt="Projects" placeholder="blur" />
 						</motion.div>
@@ -174,7 +174,7 @@ export default function MyPage() {
 							className="bg-white md:bg-transparent bg-opacity-50 px-3 py-4 text-black text-5xl md:text-8xl font-bold"
 							initial={{ x: -80, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
-							transition={{ delay: 0.1, type: "spring" }}
+							transition={{ delay: 0.1, type: "tween", ease: "easeInOut" }}
 						>
 							Our Portfolio
 						</motion.h1>
@@ -185,7 +185,7 @@ export default function MyPage() {
 							className="text-xl mt-4 tracking-wider text-gray-500 mb-5"
 							initial={{ opacity: 0, x: -70 }}
 							whileInView={{ opacity: 1, x: 0 }}
-							transition={{ delay: 0.2, type: "spring" }}
+							transition={{ delay: 0.2, type: "tween", ease: "easeInOut" }}
 						>
 							A look at some of our work — past and present.
 						</motion.p>
@@ -207,7 +207,7 @@ export default function MyPage() {
 							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
 							initial={{ opacity: 0, x: 100 }}
 							whileInView={{ opacity: 1, x: 0 }}
-							transition={{ delay: 0.5, type: "spring" }}
+							transition={{ delay: 0.5, type: "tween", ease: "easeInOut" }}
 						>
 							<Image src={Setup} layout="fill" className="object-cover" alt="Contact" placeholder="blur" />
 						</motion.div>
@@ -219,7 +219,7 @@ export default function MyPage() {
 							className="bg-white md:bg-transparent bg-opacity-50 px-3 py-4 text-black text-5xl md:text-8xl font-bold"
 							initial={{ x: -80, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
-							transition={{ delay: 0.1, type: "spring" }}
+							transition={{ delay: 0.1, type: "tween", ease: "easeInOut" }}
 						>
 							Get In Touch
 						</motion.h1>
@@ -230,7 +230,7 @@ export default function MyPage() {
 							className="text-xl mt-4 tracking-wider text-gray-500 mb-5"
 							initial={{ x: -70, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
-							transition={{ delay: 0.2, type: "spring" }}
+							transition={{ delay: 0.2, type: "tween", ease: "easeInOut" }}
 						>
 							Feel free to reach out with questions or collaboration ideas.
 						</motion.p>
