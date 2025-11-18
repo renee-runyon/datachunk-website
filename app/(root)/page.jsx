@@ -22,35 +22,34 @@ export default function MyPage() {
 		<div className="snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth">
 
 			{/* ================= HOME ================= */}
-			<section id="home" className="snap-start h-screen flex items-center">
-				<div className="mx-auto container grid grid-cols-1 md:grid-cols-3 gap-4 p-10 md:px-20">
+			<section id="home" className="snap-start min-h-screen flex items-center pt-24">
+				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
-					{/* LEFT SIDE */}
+					{/* LEFT SIDE TEXT */}
 					<motion.div
-						className="col-span-2 flex flex-col justify-center text-center 
-                                   md:text-start md:items-start px-10 md:pl-[10%]"
+						className="flex flex-col justify-center md:pr-10"
 						initial={{ x: -80, opacity: 0 }}
 						whileInView={{ x: 0, opacity: 1 }}
 						transition={{ type: "tween", ease: "easeInOut" }}
 					>
 						{/* MOBILE IMAGE */}
-						<div className="block md:hidden mx-auto my-10">
-							<div className="bg-slate-500 rounded-full h-60 w-60 
-                                            grayscale hover:grayscale-0 transition-all duration-300">
+						<div className="block md:hidden mb-10">
+							<div className="relative rounded-full overflow-hidden
+                        h-[220px] w-[220px] mx-auto
+                        grayscale hover:grayscale-0 transition-all duration-300">
 								<Image
 									src={Beach}
-									width={500}
-									height={500}
-									className="rounded-full object-cover"
-									alt="Portrait"
+									fill
+									className="object-cover"
 									placeholder="blur"
+									alt="Portrait"
 								/>
 							</div>
 						</div>
 
 						{/* PAGE TITLE */}
 						<motion.h1
-							className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold my-2 md:my-5"
+							className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold"
 							initial={{ opacity: 0, y: -40 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ delay: 0.2, type: "tween", ease: "easeInOut" }}
@@ -67,7 +66,8 @@ export default function MyPage() {
 						].map((text, i) => (
 							<motion.p
 								key={i}
-								className={`title text-lg 2xl:text-xl mt-2 tracking-wider text-sky-800 ${i === 0 ? "mt-4" : ""}`}
+								className={`title text-lg 2xl:text-xl mt-2 tracking-wider text-sky-800 ${i === 0 ? "mt-4" : ""
+									}`}
 								initial={{ x: -60, opacity: 0 }}
 								whileInView={{ x: 0, opacity: 1 }}
 								transition={{ delay: 0.3 + i * 0.15, type: "tween", ease: "easeInOut" }}
@@ -78,7 +78,7 @@ export default function MyPage() {
 
 						{/* BUTTONS */}
 						<motion.div
-							className="flex space-x-4 mt-10"
+							className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 mt-10"
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ delay: 1.1, type: "tween", ease: "easeInOut" }}
@@ -86,33 +86,37 @@ export default function MyPage() {
 							<Button variation="primary">
 								<a href="#about">Learn More</a>
 							</Button>
+
 							<Button variation="secondary">
 								<a href="#contact">Contact Us</a>
 							</Button>
 						</motion.div>
 					</motion.div>
 
-					{/* RIGHT SIDE IMAGE */}
+					{/* RIGHT SIDE IMAGE (DESKTOP ONLY) */}
 					<motion.div
 						className="hidden md:flex justify-center items-center"
 						initial={{ x: 80, opacity: 0 }}
 						whileInView={{ x: 0, opacity: 1 }}
 						transition={{ delay: 0.6, type: "tween", ease: "easeInOut" }}
 					>
-						<div className="rounded-full lg:px-12 grayscale hover:grayscale-0 transition-all duration-300">
+						<div className="relative rounded-4xl overflow-hidden
+                      h-[380px] md:h-[450px] lg:h-[500px]
+                      w-[280px] md:w-[320px] lg:w-[360px]
+                      grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
 								src={Beach}
-								width={400}
-								height={550}
+								fill
 								placeholder="blur"
 								alt="Beach image"
-								className="rounded-full object-cover"
+								className="object-cover"
 							/>
 						</div>
 					</motion.div>
 
 				</div>
 			</section>
+
 
 			{/* ================= ABOUT ================= */}
 			<section id="about" className="snap-start min-h-screen flex items-center pt-24">
@@ -181,12 +185,12 @@ export default function MyPage() {
 						transition={{ type: "tween", ease: "easeInOut" }}
 					>
 						<div className="relative bg-slate-300 rounded-4xl overflow-hidden
-                      h-[350px] md:h-[550px] w-full md:w-[28vw]
+                      h-[280px] md:h-[420px] w-full md:w-[28vw]
                       grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
 								src={Lighthouse}
 								alt="Projects"
-								layout="fill"
+								fill
 								className="object-cover"
 								placeholder="blur"
 							/>
@@ -219,8 +223,9 @@ export default function MyPage() {
 			</section>
 
 
+
 			{/* ================= CONTACT ================= */}
-			<section id="contact" className="snap-start min-h-screen flex items-center">
+			<section id="contact" className="snap-start min-h-screen flex items-center pt-24">
 				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
 					{/* IMAGE */}
@@ -231,12 +236,12 @@ export default function MyPage() {
 						transition={{ type: "tween", ease: "easeInOut" }}
 					>
 						<div className="relative bg-slate-300 rounded-4xl overflow-hidden
-                      h-[350px] md:h-[550px] w-full md:w-[28vw]
+                      h-[280px] md:h-[420px] w-full md:w-[28vw]
                       grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
 								src={Cranberry}
 								alt="Contact"
-								layout="fill"
+								fill
 								className="object-cover"
 								placeholder="blur"
 							/>
@@ -261,12 +266,9 @@ export default function MyPage() {
 						</p>
 
 						<p className="text-xl mt-2 tracking-wider text-gray-500 mb-5">
-							<a href="mailto:info@datachunkdesigns.com">
-								info@datachunkdesigns.com
-							</a>
+							<a href="mailto:info@datachunkdesigns.com">info@datachunkdesigns.com</a>
 						</p>
 
-						{/* ICONS */}
 						<div className="flex space-x-4 mt-8">
 							{[
 								{ icon: faEnvelope, href: "mailto:info@datachunkdesigns.com" },
@@ -289,10 +291,12 @@ export default function MyPage() {
 								</motion.a>
 							))}
 						</div>
+
 					</motion.div>
 
 				</div>
 			</section>
+
 
 
 		</div>
