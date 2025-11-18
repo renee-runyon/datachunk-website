@@ -135,7 +135,7 @@ export default function MyPage() {
           relative rounded-4xl overflow-hidden
           h-[28vh]                /* MUCH SHORTER on mobile */
           sm:h-[32vh]             /* Slight bump on small tablets */
-          md:h-[55vh]             /* Tall and nice on desktop */
+          md:h-[45vh]             /* Tall and nice on desktop */
           w-full md:w-[30vw]
           grayscale hover:grayscale-0 transition-all duration-300
         "
@@ -193,7 +193,7 @@ export default function MyPage() {
           relative bg-transparent rounded-4xl overflow-hidden
           h-[28vh]                 /* MOBILE: short */
           sm:h-[32vh]              /* small tablets */
-          md:h-[55vh]              /* DESKTOP tall */
+          md:h-[45vh]              /* DESKTOP tall */
           w-full md:w-[30vw]
           grayscale hover:grayscale-0 transition-all duration-300
         "
@@ -251,13 +251,13 @@ export default function MyPage() {
           relative bg-transparent rounded-4xl overflow-hidden
           h-[28vh]                 /* MOBILE short */
           sm:h-[32vh]              /* small tablets */
-          md:h-[55vh]              /* DESKTOP tall */
+          md:h-[45vh]              /* DESKTOP tall */
           w-full md:w-[30vw]
           grayscale hover:grayscale-0 transition-all duration-300
         "
 						>
 							<Image
-								src={Cranberry}
+								src={Beach}
 								alt="Contact"
 								fill
 								className="object-cover object-center"
