@@ -10,6 +10,7 @@ import Me from "@/public/image/me.jpg";
 import MeAbout from "@/public/image/me.jpg";
 import Setup from "@/public/image/setup.jpg";
 import ProjectAll from "@/public/image/projects.png";
+import Goldfinch from "@/public/image/goldfinch.jpg";
 import Hr from "@/components/Hr";
 
 // icons
@@ -23,16 +24,20 @@ export default function MyPage() {
 
 			{/* ================= HOME ================= */}
 			<section id="home" className="snap-start h-screen flex items-center">
-				<div className="mx-auto container grid grid-cols-1 md:grid-cols-3 gap-4 p-10 overflow-hidden md:px-20">
+				<div className="mx-auto container grid grid-cols-1 md:grid-cols-3 gap-4 p-10 md:px-20">
+
 					{/* LEFT SIDE */}
 					<motion.div
-						className="col-span-2 flex flex-col justify-center items-center md:items-start text-center md:text-start"
+						className="col-span-2 flex flex-col justify-center text-center 
+                                   md:text-start md:items-start px-10 md:pl-[10%]"
 						initial={{ x: -80, opacity: 0 }}
 						whileInView={{ x: 0, opacity: 1 }}
 						transition={{ type: "tween", ease: "easeInOut" }}
 					>
+						{/* MOBILE IMAGE */}
 						<div className="block md:hidden mx-auto my-10">
-							<div className="bg-slate-500 rounded-full h-60 w-60 grayscale hover:grayscale-0 transition-all duration-300">
+							<div className="bg-slate-500 rounded-full h-60 w-60 
+                                            grayscale hover:grayscale-0 transition-all duration-300">
 								<Image
 									src={Me}
 									width={500}
@@ -44,6 +49,7 @@ export default function MyPage() {
 							</div>
 						</div>
 
+						{/* PAGE TITLE */}
 						<motion.h1
 							className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold my-2 md:my-5"
 							initial={{ opacity: 0, y: -40 }}
@@ -53,6 +59,7 @@ export default function MyPage() {
 							Datachunk Media Designs
 						</motion.h1>
 
+						{/* TAGLINES */}
 						{[
 							"WEBSITE DESIGN & DEVELOPMENT",
 							"CONTENT CREATION & STRATEGY",
@@ -61,8 +68,7 @@ export default function MyPage() {
 						].map((text, i) => (
 							<motion.p
 								key={i}
-								className={`title text-xl 2xl:text-xl mt-2 tracking-wider ${i === 0 ? "text-sky-800 mt-4" : "text-gray-500"
-									}`}
+								className={`title text-lg 2xl:text-xl mt-2 tracking-wider text-sky-800 ${i === 0 ? "mt-4" : ""}`}
 								initial={{ x: -60, opacity: 0 }}
 								whileInView={{ x: 0, opacity: 1 }}
 								transition={{ delay: 0.3 + i * 0.15, type: "tween", ease: "easeInOut" }}
@@ -71,6 +77,7 @@ export default function MyPage() {
 							</motion.p>
 						))}
 
+						{/* BUTTONS */}
 						<motion.div
 							className="flex space-x-4 mt-10"
 							initial={{ opacity: 0, y: 20 }}
@@ -86,7 +93,7 @@ export default function MyPage() {
 						</motion.div>
 					</motion.div>
 
-					{/* RIGHT SIDE */}
+					{/* RIGHT SIDE IMAGE */}
 					<motion.div
 						className="hidden md:flex justify-center items-center"
 						initial={{ x: 80, opacity: 0 }}
@@ -95,15 +102,16 @@ export default function MyPage() {
 					>
 						<div className="rounded-full lg:px-12 grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
-								src={Me}
+								src={Goldfinch}
 								width={400}
 								height={550}
 								placeholder="blur"
-								alt="Portrait"
+								alt="Goldfinch Portrait"
 								className="rounded-full object-cover"
 							/>
 						</div>
 					</motion.div>
+
 				</div>
 			</section>
 
@@ -114,19 +122,24 @@ export default function MyPage() {
 					{/* IMAGE */}
 					<div className="z-0 md:absolute top-1/4 md:right-[10%] md:-translate-y-16 mb-40 md:mb-0">
 						<motion.div
-							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
-							initial={{ opacity: 0, x: 100 }}
-							whileInView={{ opacity: 1, x: 0 }}
-							transition={{ delay: 0.5, type: "tween", ease: "easeInOut" }}
+							className="relative bg-slate-300 rounded-4xl overflow-hidden 
+                                       h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] 
+                                       grayscale hover:grayscale-0"
 						>
-							<Image src={MeAbout} layout="fill" className="object-cover" alt="About" placeholder="blur" />
+							<Image
+								src={MeAbout}
+								layout="fill"
+								alt="About"
+								placeholder="blur"
+								className="object-cover"
+							/>
 						</motion.div>
 					</div>
 
 					{/* TEXT */}
 					<div className="z-10 absolute md:left-[10%] top-[60%] md:top-1/3 px-10">
 						<motion.h1
-							className="bg-white md:bg-transparent bg-opacity-50 px-3 py-4 text-black text-5xl md:text-8xl font-bold"
+							className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold pt-12"
 							initial={{ x: -80, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{ delay: 0.1, type: "tween", ease: "easeInOut" }}
@@ -149,6 +162,7 @@ export default function MyPage() {
 							<Link href="/about">Learn More</Link>
 						</Button>
 					</div>
+
 				</div>
 			</section>
 
@@ -159,19 +173,24 @@ export default function MyPage() {
 					{/* IMAGE */}
 					<div className="z-0 md:absolute top-1/4 md:right-[10%] md:-translate-y-16 mb-40 md:mb-0">
 						<motion.div
-							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
-							initial={{ opacity: 0, x: 100 }}
-							whileInView={{ opacity: 1, x: 0 }}
-							transition={{ delay: 0.5, type: "tween", ease: "easeInOut" }}
+							className="relative bg-slate-300 rounded-4xl overflow-hidden 
+                                       h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] 
+                                       grayscale hover:grayscale-0"
 						>
-							<Image src={ProjectAll} layout="fill" className="object-cover" alt="Projects" placeholder="blur" />
+							<Image
+								src={ProjectAll}
+								layout="fill"
+								alt="Projects"
+								placeholder="blur"
+								className="object-cover"
+							/>
 						</motion.div>
 					</div>
 
 					{/* TEXT */}
 					<div className="z-10 absolute md:left-[10%] top-[60%] md:top-1/3 px-10">
 						<motion.h1
-							className="bg-white md:bg-transparent bg-opacity-50 px-3 py-4 text-black text-5xl md:text-8xl font-bold"
+							className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold pt-12"
 							initial={{ x: -80, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{ delay: 0.1, type: "tween", ease: "easeInOut" }}
@@ -194,6 +213,7 @@ export default function MyPage() {
 							<Link href="/projects">Learn More</Link>
 						</Button>
 					</div>
+
 				</div>
 			</section>
 
@@ -204,19 +224,24 @@ export default function MyPage() {
 					{/* IMAGE */}
 					<div className="z-0 md:absolute top-1/4 md:right-[10%] md:-translate-y-16 mb-40 md:mb-0">
 						<motion.div
-							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
-							initial={{ opacity: 0, x: 100 }}
-							whileInView={{ opacity: 1, x: 0 }}
-							transition={{ delay: 0.5, type: "tween", ease: "easeInOut" }}
+							className="relative bg-slate-300 rounded-4xl overflow-hidden 
+                                       h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] 
+                                       grayscale hover:grayscale-0"
 						>
-							<Image src={Setup} layout="fill" className="object-cover" alt="Contact" placeholder="blur" />
+							<Image
+								src={Setup}
+								layout="fill"
+								alt="Contact"
+								placeholder="blur"
+								className="object-cover"
+							/>
 						</motion.div>
 					</div>
 
 					{/* TEXT */}
 					<div className="z-10 absolute md:left-[10%] top-[60%] md:top-1/3 px-10">
 						<motion.h1
-							className="bg-white md:bg-transparent bg-opacity-50 px-3 py-4 text-black text-5xl md:text-8xl font-bold"
+							className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold pt-12"
 							initial={{ x: -80, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
 							transition={{ delay: 0.1, type: "tween", ease: "easeInOut" }}
@@ -247,7 +272,7 @@ export default function MyPage() {
 						</motion.p>
 
 						{/* ICONS */}
-						<div className="flex space-x-4 mt-4">
+						<div className="flex space-x-4 mt-12">
 							{[
 								{ icon: faEnvelope, href: "mailto:info@datachunkdesigns.com" },
 								{ icon: faGithub, href: "https://github.com/renee-runyon" },
@@ -269,6 +294,7 @@ export default function MyPage() {
 								</motion.a>
 							))}
 						</div>
+
 					</div>
 				</div>
 			</section>

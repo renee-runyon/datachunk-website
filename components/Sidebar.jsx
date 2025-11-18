@@ -56,19 +56,19 @@ const Sidebar = () => {
 	}, []);
 
 	return (
-		<div className="hidden md:flex fixed z-40 bg-gray-700 h-[50vh] w-14 flex-col justify-between items-center p-4 left-0 top-1/4 rounded-e-3xl">
+		<div className="hidden md:flex fixed z-40 bg-sky-950 h-[50vh] w-16 flex-col justify-between items-center p-4 left-0 top-1/4 rounded-e-3xl">
 			<ul className="flex flex-col justify-evenly items-center h-full text-gray-50">
 				{sections.map(({ id, icon, label }) => (
 					<li key={id}>
 						<button
 							onClick={() => handleMoveToSection(id)}
 							className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors ${activeSection === id
-									? "bg-gray-300 text-gray-900"
-									: "bg-transparent hover:bg-gray-500"
+								? "bg-amber-500 text-gray-900"
+								: "bg-transparent hover:bg-gray-400 hover:text-gray-900"
 								}`}
 							aria-label={label}
 						>
-							<FontAwesomeIcon icon={icon} className="text-xl" />
+							<FontAwesomeIcon icon={icon} className="text-lg" />
 						</button>
 					</li>
 				))}
