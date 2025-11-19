@@ -7,11 +7,7 @@ import FixedButton from "@/components/FixedButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import Skills from "./components/skills/skills.jsx";
-
-
-// images
 import Beach from "@/public/image/beach.jpg";
-
 import Hr from "@/components/Hr";
 import About from "./components/about/about.jsx";
 
@@ -24,65 +20,101 @@ export default function Page() {
 		<>
 			<main className="overflow-hidden">
 				<FixedButton href="/#about">
-					<FontAwesomeIcon
-						icon={faChevronLeft}
-						className="text-black pr-10"
-					/>
+					<FontAwesomeIcon icon={faChevronLeft} className="text-black pr-10" />
 				</FixedButton>
-				<div className="relative h-screen  gap-4 p-10 flex justify-center items-center flex-col mb-10 overflow-hidden">
-					{/* hero */}
-					<div className="z-0 mb-48 md:mb-0  md:absolute top-1/4  md:right-[10%] md:-translate-y-16 ">
-						<motion.div
-							initial={{ scale: 1 }}
-							animate={{ scale: 1.6 }}
-							transition={{ ease: "circOut", duration: 1 }}
-							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0 ">
-							<Image
-								src={Beach}
-								alt="Datachunk Media Designs"
-								layout="fill"
-								objectFit="cover"
-								placeholder="blur"
-							/>
-						</motion.div>
-					</div>
-					<div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 pt-4 backdrop-filter backdrop-blur-sm md:backdrop-blur-none bg-gray-100 bg-opacity-50 md:bg-transparent md:pt-0">
-						<h1 className="md:bg-white bg-transparent lg:bg-transparent bg-opacity-50 md:px-0 text-black text-5xl md:text-8xl font-bold">
-							About Us
-						</h1>
-						<Hr />
-						<p className="title text-xl mt-4 tracking-wider text-gray-900 leading-[1.7rem] mb-5 ">
-							Who we are here at{" "}
-							<span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
-								{" "}
-								Datachunk Media Designs.
-							</span>
-						</p>
-						<motion.div
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							transition={{ duration: 0.5, ease: "circOut" }}
-							onClick={() => {
-								window.scrollTo({
-									top: 1000,
-									behavior: "smooth",
-								});
-							}}
-							className="mb-3">
-							<Button variation="primary">Scroll Down</Button>
-						</motion.div>
-					</div>
-				</div>
-				{/* end hero */}
 
-				{/* about */}
+				{/* ================= HERO SECTION ================= */}
+				<section className="min-h-screen flex items-center pt-8">
+					<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
+
+						{/* LEFT SIDE TEXT */}
+						<motion.div
+							className="flex flex-col justify-center md:pr-10"
+							initial={{ x: -80, opacity: 0 }}
+							whileInView={{ x: 0, opacity: 1 }}
+							transition={{ type: "tween", ease: "easeInOut" }}
+						>
+							{/* MOBILE IMAGE */}
+							<div className="block md:hidden mb-10">
+								<div className="relative rounded-4xl overflow-hidden h-[220px] w-[220px] mx-auto grayscale hover:grayscale-0 transition-all duration-300">
+									<Image
+										src={Beach}
+										fill
+										sizes="220px"
+										className="object-cover"
+										placeholder="blur"
+										alt="About Datachunk Media Designs"
+									/>
+								</div>
+							</div>
+
+							{/* PAGE TITLE */}
+							<motion.h1
+								className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold"
+								initial={{ opacity: 0, y: -40 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ delay: 0.2, type: "tween", ease: "easeInOut" }}
+							>
+								About Us
+							</motion.h1>
+
+							<Hr />
+
+							{/* DESCRIPTION */}
+							<motion.p
+								className="text-xl mt-4 tracking-wider text-gray-500 mb-5"
+								initial={{ x: -60, opacity: 0 }}
+								whileInView={{ x: 0, opacity: 1 }}
+								transition={{ delay: 0.4, type: "tween", ease: "easeInOut" }}
+							>
+								Who we are here at Datachunk Media Designs.
+							</motion.p>
+
+							{/* BUTTON */}
+							<motion.div
+								initial={{ opacity: 0, y: 20 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ delay: 0.6, type: "tween", ease: "easeInOut" }}
+							>
+								<Button
+									variation="primary"
+									onClick={() => {
+										window.scrollTo({
+											top: window.innerHeight,
+											behavior: "smooth",
+										});
+									}}
+								>
+									Learn More
+								</Button>
+							</motion.div>
+						</motion.div>
+
+						{/* RIGHT SIDE IMAGE (DESKTOP ONLY) */}
+						<motion.div
+							className="hidden md:flex justify-center items-center"
+							initial={{ x: 80, opacity: 0 }}
+							whileInView={{ x: 0, opacity: 1 }}
+							transition={{ delay: 0.6, type: "tween", ease: "easeInOut" }}
+						>
+							<div className="relative rounded-4xl overflow-hidden h-[28vh] sm:h-[32vh] md:h-[45vh] w-full md:w-[30vw] grayscale hover:grayscale-0 transition-all duration-300">
+								<Image
+									src={Beach}
+									fill
+									placeholder="blur"
+									alt="About Datachunk Media Designs"
+									className="object-cover"
+								/>
+							</div>
+						</motion.div>
+					</div>
+				</section>
+
+				{/* ================= ABOUT CONTENT ================= */}
 				<About />
-				{/* end about */}
 
-				{/* skills */}
+				{/* ================= SKILLS ================= */}
 				<Skills />
-				{/* end skills */}
-
 			</main>
 		</>
 	);
