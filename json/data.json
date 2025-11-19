@@ -4,16 +4,15 @@
       "show": true,
       "title": "Personal Portfolio Website",
       "desc": [
-        "A personal portfolio website that created for a client using ReactJs, Typescript."
+        "This portfolio started as a heavily customized build based on an open-source React template. I rebuilt large sections of the layout, rewrote components, redesigned the visual style, and added new features such as project modals, mobile/desktop mockups, refined card layouts, improved spacing, and a cohesive color system. The goal was to create a lightweight, expressive personal site that highlights my work clearly and looks great on every device."
       ],
       "year": "2025",
-      "preview": "",
+      "preview": "https://reneerunyon.com",
       "code": "",
       "thumbnail": "/image/projects/web/renee-portfolio/portf-thumbnail.png",
       "images": [
-        "/image/projects/web/renee-portfolio/portf1.png",
-        "/image/projects/web/renee-portfolio/portf2.png",
-        "/image/projects/web/renee-portfolio/portf3.png"
+        "/image/projects/web/portfolio/portf-laptop.png",
+        "/image/projects/web/portfolio/portf-mobile.png"
       ],
       "tech": [
         "ReactJS",
@@ -26,72 +25,97 @@
     },
     {
       "show": true,
-      "title": "Personal Portfolio Website",
+      "title": "IPSS",
       "desc": [
-        "A personal portfolio website that created for a client using ReactJs, Typescript."
+        "For IPSS, I collaborated with a professional designer who provided the layouts for the new site. My role was to implement the full build using WordPress and Elementor, create structured program pages, and develop private-access areas for enrolled students. I integrated a secure student portal for class materials, built custom application forms, and organized the overall information architecture to support multiple certification tracks. The result is a polished, modern site that meets the needs of both prospective and active students."
       ],
       "year": "2025",
-      "preview": "",
+      "preview": "https://ipssny.org",
       "code": "",
-      "thumbnail": "/image/projects/web/apii-portfolio/porto-thumbnail.jpg",
+      "thumbnail": "/image/projects/web/ipss/ipss-thumbnail.png",
       "images": [
-        "/image/projects/web/apii-portfolio/porto1.png",
-        "/image/projects/web/apii-portfolio/porto2.png",
-        "/image/projects/web/apii-portfolio/porto3.png"
+        "/image/projects/web/ipss/ipss-laptop.png",
+        "/image/projects/web/ipss/ipss-mobile.png"
       ],
       "tech": [
-        "ReactJS",
-        "Typescript"
+        "Wordpress",
+        "Elementor",
+        "Gravity Forms"
       ],
-      "slug": "renee-portfolio",
+      "slug": "ipss",
       "category": [
         1
       ]
     },
     {
       "show": true,
-      "title": "Personal Portfolio Website",
+      "title": "NJ Rise",
       "desc": [
-        "A personal portfolio website that created for a client using ReactJs, Typescript."
+        "NJ Rise partnered with a professional designer to refresh their visual identity, and my role was to bring those designs to life in a functional, accessible, and mission-driven website. I translated the designer’s layouts into a custom WordPress build using Elementor and implemented a WooCommerce-powered Virtual Pantry that allows donors to contribute by selecting specific items. I also improved content structure, created mobile-optimized templates, and ensured the site works seamlessly for donors, volunteers, and clients."
       ],
-      "year": "2025",
-      "preview": "",
+      "year": "2023",
+      "preview": "https://njrise.org",
       "code": "",
-      "thumbnail": "/image/projects/web/apii-portfolio/porto-thumbnail.jpg",
+      "thumbnail": "/image/projects/web/njrise/njrise-thumbnail.png",
       "images": [
-        "/image/projects/web/apii-portfolio/porto1.png",
-        "/image/projects/web/apii-portfolio/porto2.png",
-        "/image/projects/web/apii-portfolio/porto3.png"
+        "/image/projects/web/njrise/njrise-laptop.png",
+        "/image/projects/web/njrise/njrise-mobile.png"
       ],
       "tech": [
-        "ReactJS",
-        "Typescript"
+        "Wordpress",
+        "Elementor",
+        "WooCommerce"
       ],
-      "slug": "renee-portfolio",
+      "slug": "njrise",
       "category": [
         1
       ]
     },
     {
       "show": true,
-      "title": "Personal Portfolio Website",
+      "title": "Lisa Bagwell - Assemblage Artist",
       "desc": [
-        "A personal portfolio website that created for a client using ReactJs, Typescript."
+        "Lisa Bagwell&apos;s work involves intricate assemblage sculptures that deserved a cleaner, more expressive online presence. Her previous site was difficult to navigate and didn&apos;t showcase her artwork effectively. I redesigned the entire site using WordPress and Elementor, creating a bright, minimal layout that highlights her portfolio. I also improved the gallery structure, enhanced mobile responsiveness, and replaced outdated forms with Gravity Forms for a more reliable contact and inquiry experience."
       ],
-      "year": "2025",
-      "preview": "",
+      "year": "2023",
+      "preview": "https://lisabagwell.com",
       "code": "",
-      "thumbnail": "/image/projects/web/apii-portfolio/porto-thumbnail.jpg",
+      "thumbnail": "/image/projects/web/lisa/lisa-thumbnail.png",
       "images": [
-        "/image/projects/web/apii-portfolio/porto1.png",
-        "/image/projects/web/apii-portfolio/porto2.png",
-        "/image/projects/web/apii-portfolio/porto3.png"
+        "/image/projects/web/lisa/lisa-laptop.png",
+        "/image/projects/web/lisa/lisa-mobile.png"
       ],
       "tech": [
-        "ReactJS",
-        "Typescript"
+        "Wordpress",
+        "Elementor",
+        "Gravity Forms"
       ],
-      "slug": "renee-portfolio",
+      "slug": "lisa",
+      "category": [
+        1
+      ]
+    },
+    {
+      "show": true,
+      "title": "Mount Tabor Historical Society",
+      "desc": [
+        "The Mount Tabor Historical Society needed a modern, easy-to-navigate website that could showcase local history while supporting events, newsletters, tours, and volunteers. I rebuilt the entire site structure in WordPress using Elementor, reorganizing content, modernizing the layout, and creating a more intuitive user experience. A major feature is the fully interactive Walking Tour system powered by GeoDirectory, which supports both in-person and virtual visitors through unique stop pages, media galleries, and QR code signage located throughout the town."
+      ],
+      "year": "2025",
+      "preview": "https://wordpress-1459832-5615100.cloudwaysapps.com/",
+      "code": "",
+      "thumbnail": "/image/projects/web/mths/mths-thumbnail.png",
+      "images": [
+        "/image/projects/web/mths/mths-laptop.png",
+        "/image/projects/web/mths/mths-mobile.png"
+      ],
+      "tech": [
+        "Wordpress",
+        "Elementor",
+        "Gravity Forms",
+        "GeoDirectory"
+      ],
+      "slug": "mths",
       "category": [
         1
       ]

@@ -35,7 +35,7 @@ export default function MyPage() {
 					>
 						{/* MOBILE IMAGE */}
 						<div className="block md:hidden mb-10">
-							<div className="relative rounded-full overflow-hidden
+							<div className="relative rounded-4xl overflow-hidden
                         h-[220px] w-[220px] mx-auto
                         grayscale hover:grayscale-0 transition-all duration-300">
 								<Image
@@ -101,10 +101,16 @@ export default function MyPage() {
 						whileInView={{ x: 0, opacity: 1 }}
 						transition={{ delay: 0.6, type: "tween", ease: "easeInOut" }}
 					>
-						<div className="relative rounded-4xl overflow-hidden
-                      h-[380px] md:h-[450px] lg:h-[500px]
-                      w-[280px] md:w-[320px] lg:w-[360px]
-                      grayscale hover:grayscale-0 transition-all duration-300">
+						<div
+							className="
+          relative rounded-4xl overflow-hidden
+          h-[28vh]                /* MUCH SHORTER on mobile */
+          sm:h-[32vh]             /* Slight bump on small tablets */
+          md:h-[45vh]             /* Tall and nice on desktop */
+          w-full md:w-[30vw]
+          grayscale hover:grayscale-0 transition-all duration-300
+        "
+						>
 							<Image
 								src={Beach}
 								fill
