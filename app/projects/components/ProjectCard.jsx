@@ -135,10 +135,32 @@ export default function ProjectCard({ project, index, activeCategory }) {
 					</div>
 				</div>
 
+				{/* VIEW PROJECT BUTTON (appears when tapped on mobile) */}
+				{isTapped && (
+					<Link
+						href={"projects/" + project.slug}
+						className="absolute bottom-6 left-1/2 -translate-x-1/2 lg:hidden z-40"
+						onClick={(e) => e.stopPropagation()}
+					>
+						<motion.button
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							className="
+								px-6 py-3 bg-white text-sky-950 
+								rounded-full font-semibold text-sm
+								shadow-2xl hover:bg-sky-100
+								active:scale-95 transition-all
+							"
+						>
+							View Project →
+						</motion.button>
+					</Link>
+				)}
+
 				{/* MOBILE TAP INDICATOR */}
 				<div className="absolute bottom-3 right-3 lg:hidden z-30">
 					<span className="text-xs text-gray-400">
-						{isTapped ? '👆 Tap again' : '👆 Tap to view'}
+						{isTapped ? '👆 Tap to close' : '👆 Tap to preview'}
 					</span>
 				</div>
 			</motion.div>

@@ -107,7 +107,7 @@ export default function Page() {
 					<div className="flex justify-center items-center flex-col my-5 self-start">
 						<Hr variant="long"></Hr>
 						<motion.h1
-							className="text-3xl font-bold mt-3"
+							className="text-3xl font-bold mt-8"
 							initial={{
 								opacity: 0,
 								x: -200,
@@ -138,7 +138,7 @@ export default function Page() {
 					transition={{
 						type: "tween",
 					}}
-					className="flex flex-row justify-center items-start flex-wrap gap-3 md:gap-5 my-5 ">
+					className="flex flex-row justify-center items-start flex-wrap gap-3 md:gap-5 my-5 mb-16 mt-8">
 					{Object.keys(category).map((key, index) => (
 						<button
 							key={index}
