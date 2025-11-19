@@ -19,7 +19,7 @@ export default function ProjectCard({ project, index, activeCategory }) {
 				className="
           relative z-10 flex flex-col items-center 
           mb-10 w-full bg-sky-950 text-white 
-          rounded-4xl group/tes px-6 py-6 md:px-8 md:py-8 shadow-xl
+          rounded-4xl group/tes px-16 py-16 md:px-8 md:py-8 shadow-xl
           h-[340px] md:h-[360px] lg:h-[380px]
           overflow-hidden cursor-pointer
         "
@@ -35,13 +35,12 @@ export default function ProjectCard({ project, index, activeCategory }) {
 				}}
 			>
 				{/* YEAR BADGE */}
-				<div className="absolute top-0 left-0 bg-sky-950 px-6 py-4 rounded-tl-4xl  rounded-br-3xl z-30">
+				<div className="absolute top-0 left-0 bg-sky-950 px-6 py-4 rounded-tl-4xl rounded-br-3xl z-30">
 					<h4 className="text-white text-sm">{project.year}</h4>
 				</div>
 
 				{/* ===================================== */}
-				{/* IMAGES — Mobile: preview by default  */}
-				{/*          Desktop: hover to reveal     */}
+				{/* IMAGE PREVIEW (desktop hover / mobile tap) */}
 				{/* ===================================== */}
 				{laptopImg && mobileImg && (
 					<div
@@ -50,24 +49,22 @@ export default function ProjectCard({ project, index, activeCategory }) {
               transition-all duration-500
               flex items-center justify-center
               pointer-events-none
-              
-              /* Show preview at 50% always, full on tap/hover */
+
               opacity-10
               ${isTapped ? 'opacity-100' : ''}
-              
-              /* Desktop: show full on hover */
               lg:group-hover/tes:opacity-100
             `}
 					>
 						{/* LAPTOP */}
 						<div className="relative w-[80%] drop-shadow-xl z-10">
 							<Image
-								src={laptopImg}
+								src={"/" + laptopImg}
 								alt={`${project.title} laptop preview`}
 								width={800}
 								height={500}
 								className="rounded-xl object-contain"
 							/>
+
 						</div>
 
 						{/* MOBILE */}
@@ -84,42 +81,49 @@ export default function ProjectCard({ project, index, activeCategory }) {
               `}
 						>
 							<Image
-								src={mobileImg}
+								src={"/" + mobileImg}
 								alt={`${project.title} mobile preview`}
 								width={200}
 								height={400}
 								className="rounded-xl object-contain"
 							/>
+
 						</div>
 					</div>
 				)}
 
 				{/* ===================================== */}
-				{/* VISIBLE CONTENT                        */}
+				{/* VISIBLE CONTENT (title + description + tech bottom) */}
 				{/* ===================================== */}
 				<div
 					className={`
+            flex flex-col justify-between h-full w-full
             text-center transition-all duration-300 px-4 z-30 mt-4
-            
-            /* Mobile: fade less when tapped */
+
             ${isTapped ? 'opacity-10' : 'opacity-100'}
-            
-            /* Desktop: fade on hover */
             lg:group-hover/tes:opacity-0
           `}
 				>
-					<h1 className="text-4xl md:text-3xl font-bold mb-6 md:mb-4">{project.title}</h1>
-					<p className="mb-8 text-gray-200 leading-relaxed text-left text-xl md:text-md">
-						{project.desc[0].length > 100
-							? `${project.desc[0].slice(0, 80)}...`
-							: project.desc[0]}
-					</p>
-					<div className="flex justify-center items-center flex-wrap mt-1 gap-2 md:gap-1">
-						{project.tech.map((t, index) => (
+					{/* TOP CONTENT: title + description */}
+					<div>
+						<h1 className="text-3xl md:text-2xl font-bold mb-4">
+							{project.title}
+						</h1>
+
+						<p className="mb-4 text-gray-200 leading-relaxed text-left text-lg md:text-md">
+							{project.desc[0].length > 100
+								? `${project.desc[0].slice(0, 80)}...`
+								: project.desc[0]}
+						</p>
+					</div>
+
+					{/* BOTTOM CONTENT: tech stack badges */}
+					<div className="flex justify-center items-center flex-wrap gap-2 md:gap-1 mt-auto pt-2">
+						{project.tech.map((t, i) => (
 							<span
-								key={index}
+								key={i}
 								className="
-                  px-5 py-2.5 md:px-4 md:py-2
+                  px-4 py-2 md:px-2 md:py-1.5
                   bg-sky-200 text-sky-950 
                   rounded-md 
                   text-base md:text-sm whitespace-nowrap
@@ -131,7 +135,7 @@ export default function ProjectCard({ project, index, activeCategory }) {
 					</div>
 				</div>
 
-				{/* Optional: Tap indicator for mobile */}
+				{/* MOBILE TAP INDICATOR */}
 				<div className="absolute bottom-3 right-3 lg:hidden z-30">
 					<span className="text-xs text-gray-400">
 						{isTapped ? '👆 Tap again' : '👆 Tap to view'}

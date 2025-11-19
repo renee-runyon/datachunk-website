@@ -20,7 +20,7 @@ export default function ProjectCard({ project, index, activeCategory }) {
 							x: 0,
 						}}
 						transition={{
-							type: "spring",
+							type: "tween",
 						}}>
 						<Image
 							src={project.thumbnail}

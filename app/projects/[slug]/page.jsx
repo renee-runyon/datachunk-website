@@ -112,12 +112,13 @@ function Lightbox({ images, currentIndex, onClose, onNext, onPrev }) {
 					onClick={(e) => e.stopPropagation()}
 				>
 					<Image
-						src={images[currentIndex]}
+						src={"/" + images[currentIndex]}
 						alt={`Project Image ${currentIndex + 1}`}
 						className="w-full h-auto max-h-[90vh] object-contain"
 						width={1920}
 						height={1080}
 					/>
+
 					<div className="text-center text-white mt-4">
 						{currentIndex + 1} / {images.length}
 					</div>
@@ -300,11 +301,12 @@ function Page(props) {
 										onClick={() => openLightbox(index)}
 									>
 										<Image
-											src={image}
+											src={"/" + image}
 											alt={`Thumbnail ${index + 1}`}
 											fill
 											className="object-cover transition-all group-hover:brightness-75"
 										/>
+
 										<div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
 											<div className="bg-black/50 rounded-full p-3">
 												<FontAwesomeIcon

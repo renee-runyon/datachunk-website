@@ -41,10 +41,12 @@ export default function MyPage() {
 								<Image
 									src={Beach}
 									fill
+									sizes="220px"       // <= REQUIRED for fill
 									className="object-cover"
 									placeholder="blur"
 									alt="Portrait"
 								/>
+
 							</div>
 						</div>
 

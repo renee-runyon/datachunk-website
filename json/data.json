@@ -2,17 +2,40 @@
   "Projects": [
     {
       "show": true,
-      "title": "Personal Portfolio Website",
+      "title": "Datachunk Designs",
+      "desc": [
+        "This website for a small business started as a heavily customized build based on an open-source React template. Large sections of the layout were rebuilt. The visual style was redesigned and most components rewritten. New features such as project modals, mobile/desktop mockups, refined card layouts, improved spacing, and a cohesive color system were also added. The goal was to create a lightweight site that highlights the mission and work of the business clearly and looks great on every device."
+      ],
+      "year": "2025",
+      "preview": "https://datachunk-website.vercel.app",
+      "code": "https://github.com/renee-runyon/datachunk-website",
+      "thumbnail": "image/projects/web/hanj/hanj-thumbnail.png",
+      "images": [
+        "image/projects/web/hanj/hanj-laptop.png",
+        "image/projects/web/hanj/hanj-mobile.png"
+      ],
+      "tech": [
+        "ReactJS",
+        "TailwindCSS"
+      ],
+      "slug": "datachunk",
+      "category": [
+        1
+      ]
+    },
+    {
+      "show": true,
+      "title": "Personal Portfolio",
       "desc": [
         "This portfolio started as a heavily customized build based on an open-source React template. I rebuilt large sections of the layout, rewrote components, redesigned the visual style, and added new features such as project modals, mobile/desktop mockups, refined card layouts, improved spacing, and a cohesive color system. The goal was to create a lightweight, expressive personal site that highlights my work clearly and looks great on every device."
       ],
       "year": "2025",
       "preview": "https://reneerunyon.com",
       "code": "",
-      "thumbnail": "/image/projects/web/renee-portfolio/portf-thumbnail.png",
+      "thumbnail": "image/projects/web/renee-portfolio/portf-thumbnail.png",
       "images": [
-        "/image/projects/web/portfolio/portf-laptop.png",
-        "/image/projects/web/portfolio/portf-mobile.png"
+        "image/projects/web/portfolio/portf-laptop.png",
+        "image/projects/web/portfolio/portf-mobile.png"
       ],
       "tech": [
         "ReactJS",
@@ -32,10 +55,10 @@
       "year": "2025",
       "preview": "https://ipssny.org",
       "code": "",
-      "thumbnail": "/image/projects/web/ipss/ipss-thumbnail.png",
+      "thumbnail": "image/projects/web/ipss/ipss-thumbnail.png",
       "images": [
-        "/image/projects/web/ipss/ipss-laptop.png",
-        "/image/projects/web/ipss/ipss-mobile.png"
+        "image/projects/web/ipss/ipss-laptop.png",
+        "image/projects/web/ipss/ipss-mobile.png"
       ],
       "tech": [
         "Wordpress",
@@ -56,10 +79,10 @@
       "year": "2023",
       "preview": "https://njrise.org",
       "code": "",
-      "thumbnail": "/image/projects/web/njrise/njrise-thumbnail.png",
+      "thumbnail": "image/projects/web/njrise/njrise-thumbnail.png",
       "images": [
-        "/image/projects/web/njrise/njrise-laptop.png",
-        "/image/projects/web/njrise/njrise-mobile.png"
+        "image/projects/web/njrise/njrise-laptop.png",
+        "image/projects/web/njrise/njrise-mobile.png"
       ],
       "tech": [
         "Wordpress",
@@ -80,10 +103,10 @@
       "year": "2023",
       "preview": "https://lisabagwell.com",
       "code": "",
-      "thumbnail": "/image/projects/web/lisa/lisa-thumbnail.png",
+      "thumbnail": "image/projects/web/lisa/lisa-thumbnail.png",
       "images": [
-        "/image/projects/web/lisa/lisa-laptop.png",
-        "/image/projects/web/lisa/lisa-mobile.png"
+        "image/projects/web/lisa/lisa-laptop.png",
+        "image/projects/web/lisa/lisa-mobile.png"
       ],
       "tech": [
         "Wordpress",
@@ -104,10 +127,10 @@
       "year": "2025",
       "preview": "https://wordpress-1459832-5615100.cloudwaysapps.com/",
       "code": "",
-      "thumbnail": "/image/projects/web/mths/mths-thumbnail.png",
+      "thumbnail": "image/projects/web/mths/mths-thumbnail.png",
       "images": [
-        "/image/projects/web/mths/mths-laptop.png",
-        "/image/projects/web/mths/mths-mobile.png"
+        "image/projects/web/mths/mths-laptop.png",
+        "image/projects/web/mths/mths-mobile.png"
       ],
       "tech": [
         "Wordpress",
