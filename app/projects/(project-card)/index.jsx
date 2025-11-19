@@ -41,11 +41,11 @@ export default function ProjectCard({ project, index, activeCategory }) {
 									? `${project.desc[0].slice(0, 125)}...`
 									: project.desc[0]}
 							</p>
-							<div className="flex justify-center items-center flex-row mt-5 flex-wrap">
+							<div className="flex justify-center items-center flex-row mt-5  flex-wrap">
 								{project.tech.map((t, index) => (
 									<span
 										key={index}
-										className="m-1 px-4 py-2 bg-gray-600 text-white ">
+										className="m-1 px-4 py-2 bg-gray-600 text-white">
 										{t}
 									</span>
 								))}

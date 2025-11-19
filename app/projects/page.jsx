@@ -223,7 +223,7 @@ export default function Page() {
 						x: 0,
 					}}
 					transition={{
-						type: "spring",
+						type: "tween",
 					}}
 					className="flex flex-row justify-center items-start flex-wrap gap-3 md:gap-5 my-5 ">
 					{Object.keys(category).map((key, index) => (
@@ -240,15 +240,28 @@ export default function Page() {
 				</motion.div>
 
 				{/* projects */}
-				<div className="w-screen mx-auto container gap-4 px-10 grid grid-cols-1 md:grid-cols-2 mb-10 cursor-pointer">
+				<div
+					className="
+    w-screen mx-auto container 
+    px-10 
+    grid 
+    grid-cols-1           /* mobile */
+    md:grid-cols-2        /* tablets */
+    lg:grid-cols-3        /* desktops */
+    gap-10 
+    mb-10 
+    cursor-pointer
+  "
+				>
 					{projects.map((project, index) => (
 						<ProjectCard
-							project={project}
 							key={index}
+							project={project}
 							activeCategory={activeCategory}
 						/>
 					))}
 				</div>
+
 
 				{/* view in archive btn */}
 				<motion.div
