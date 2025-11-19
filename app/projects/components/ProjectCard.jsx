@@ -15,9 +15,9 @@ export default function ProjectCard({ project, index, activeCategory }) {
 			<motion.div
 				className="
           relative z-10 flex flex-col items-center 
-          mb-10 w-full bg-slate-600/70 text-white 
-          rounded-4xl group/tes px-6 py-10 md:px-10 md:py-14 shadow-xl
-          h-[480px] md:h-[500px] lg:h-[520px]
+          mb-10 w-full bg-slate-800/70 text-white 
+          rounded-4xl group/tes px-6 py-6 md:px-8 md:py-8 shadow-xl
+          h-[340px] md:h-[360px] lg:h-[380px] /* MUCH SHORTER */
           overflow-hidden
         "
 				initial={{ opacity: 0, x: -200 }}
@@ -27,80 +27,83 @@ export default function ProjectCard({ project, index, activeCategory }) {
 
 				{/* YEAR BADGE */}
 				<div className="absolute top-0 left-0 bg-gray-700 px-4 py-2 rounded-tl-4xl rounded-br-3xl z-30">
-					<h4 className="text-white">{project.year}</h4>
+					<h4 className="text-white text-sm">{project.year}</h4>
 				</div>
 
-				{/* IMAGES */}
-				{laptopImg && mobileImg ? (
-					<div className="relative w-full flex items-center justify-center overflow-visible mt-4 mb-4">
-						<div className="relative w-[80%] md:w-[65%] lg:w-[80%] drop-shadow-xl z-10">
+				{/* ===================================== */}
+				{/* HOVER IMAGES — FULLY SHRUNK NOW       */}
+				{/* ===================================== */}
+				{laptopImg && mobileImg && (
+					<div
+						className="
+              absolute inset-0 
+              opacity-0 group-hover/tes:opacity-100
+              transition-all duration-500
+              flex items-center justify-center
+              pointer-events-none
+            "
+					>
+						{/* LAPTOP — SMALLER */}
+						<div className="relative w-[90%] drop-shadow-xl z-10">
 							<Image
 								src={laptopImg}
 								alt={`${project.title} laptop preview`}
-								width={1000}
-								height={700}
+								width={800}
+								height={500}
 								className="rounded-xl object-contain"
 							/>
 						</div>
 
+						{/* MOBILE — SMALLER + HIGHER */}
 						<div
 							className="
-                absolute right-[4%] bottom-[2%] 
-                w-[28%] md:w-[28%] lg:w-[24%] 
+                absolute right-[5%] bottom-[14%]
+                w-[20%] md:w-[18%] lg:w-[25%]
                 rotate-[-10deg] drop-shadow-2xl
                 transition-all duration-500
-                group-hover/tes:rotate-[-6deg] group-hover/tes:scale-105 
+                group-hover/tes:rotate-[6deg] group-hover/tes:scale-105
                 z-20
               "
 						>
 							<Image
 								src={mobileImg}
 								alt={`${project.title} mobile preview`}
-								width={300}
-								height={600}
+								width={200}
+								height={400}
 								className="rounded-xl object-contain"
 							/>
 						</div>
 					</div>
-				) : (
-					<div className="relative w-full h-64 flex items-center justify-center mt-6 mb-4">
-						<Image
-							src={project.thumbnail}
-							alt={`${project.title} thumbnail`}
-							fill
-							className="object-contain rounded-xl opacity-70 group-hover/tes:opacity-100 transition-all"
-						/>
-					</div>
 				)}
 
-				{/* CONTENT — NO DESCRIPTION */}
-				<div className="text-center transition-all duration-300 group-hover/tes:opacity-0 px-4 z-30">
-					<h1 className="text-2xl font-bold mb-4">{project.title}</h1>
+				{/* ===================================== */}
+				{/* VISIBLE CONTENT (TITLE + DESC + TECH)  */}
+				{/* ===================================== */}
+				<div className="text-center transition-all duration-300 group-hover/tes:opacity-0 px-4 z-30 mt-4">
 
-					<div className="flex justify-center items-center flex-wrap mt-2">
+					<h1 className="text-xl font-bold mb-4">{project.title}</h1>
+
+					<p className="mb-8 text-gray-200 leading-snug text-sm">
+						{project.desc[0].length > 100
+							? `${project.desc[0].slice(0, 100)}...`
+							: project.desc[0]}
+					</p>
+
+					<div className="flex justify-center items-center flex-wrap mt-1 gap-1">
 						{project.tech.map((t, index) => (
 							<span
 								key={index}
-								className="m-1 px-4 py-2 bg-gray-700 text-white rounded-md"
+								className="
+                  px-4 py-2 
+                  bg-gray-700 text-white 
+                  rounded-md 
+                  text-sm whitespace-nowrap
+                "
 							>
 								{t}
 							</span>
 						))}
 					</div>
-				</div>
-
-				{/* HOVER DETAILS LINK */}
-				<div
-					className="
-            absolute inset-0 flex items-center justify-center 
-            opacity-0 group-hover/tes:opacity-100 
-            transition-opacity duration-300
-            z-40 pointer-events-none mt-16
-        "
-				>
-					<span className="bg-gray-800/80 text-white px-6 py-3 rounded-xl text-lg font-semibold pointer-events-auto">
-						Details →
-					</span>
 				</div>
 
 			</motion.div>
