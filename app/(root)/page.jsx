@@ -221,8 +221,8 @@ export default function MyPage() {
 
 
 
-			{/* ================= CONTACT ================= */}
-			<section id="home" className="min-h-screen flex items-center pt-8 md:snap-start">
+			/* ================= CONTACT ================= */
+			<section id="contact" className="min-h-screen flex items-center pt-8 md:snap-start">
 				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
 					{/* IMAGE */}
@@ -261,10 +261,17 @@ export default function MyPage() {
 						</p>
 
 						<p className="text-xl mt-2 tracking-wider text-gray-600 mb-5">
-							<a href="mailto:info@datachunkdesigns.com">info@datachunkdesigns.com</a>
+							<a href="mailto:info@datachunkdesigns.com" className="hover:text-sky-800 transition-colors">
+								info@datachunkdesigns.com
+							</a>
 						</p>
 
-						<div className="flex space-x-4 mt-4 justify-center">
+						{/* CONTACT FORM BUTTON */}
+						<Button variation="primary" href="/contact">
+							Send Us a Message
+						</Button>
+
+						<div className="flex space-x-4 mt-6 justify-center">
 							{[
 								{ icon: faEnvelope, href: "mailto:info@datachunkdesigns.com" },
 								{ icon: faGithub, href: "https://github.com/" },
