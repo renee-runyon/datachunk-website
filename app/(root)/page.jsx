@@ -221,7 +221,7 @@ export default function MyPage() {
 
 
 
-			/* ================= CONTACT ================= */
+			{/* ================= CONTACT ================= */}
 			<section id="contact" className="min-h-screen flex items-center pt-8 md:snap-start">
 				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 

@@ -1,6 +1,7 @@
 // app/contact/page.jsx
 "use client";
 import { useForm, ValidationError } from '@formspree/react';
+import Link from 'next/link';
 
 export default function ContactPage() {
     const [state, handleSubmit] = useForm("mnnwwwpy");
@@ -15,13 +16,13 @@ export default function ContactPage() {
                         </svg>
                     </div>
                     <h2 className="text-2xl font-bold text-gray-900 mb-2">Thank you!</h2>
-                    <p className="text-gray-600 mb-6">Your message has been sent successfully. I'll get back to you soon.</p>
-                    <a
+                    <p className="text-gray-600 mb-6">Your message has been sent successfully. I&apos;ll get back to you soon.</p>
+                    <Link
                         href="/"
                         className="title inline-block rounded-xl text-lg text-center uppercase px-8 py-2 shadow-md transition duration-300 ease-in-out bg-sky-950 hover:bg-transparent border-transparent hover:border-sky-950 border-2 text-gray-100 hover:text-sky-950 box-border"
                     >
                         Back to Home
-                    </a>
+                    </Link>
                 </div>
             </div>
         );
@@ -32,7 +33,7 @@ export default function ContactPage() {
             <div className="max-w-2xl mx-auto">
                 <div className="text-center mb-8">
                     <h1 className="pt-24 text-4xl font-bold text-gray-900 mb-2">Get in Touch</h1>
-                    <p className="text-gray-600">Fill out the form below and I'll get back to you as soon as possible.</p>
+                    <p className="text-gray-600">Fill out the form below and I&apos;ll get back to you as soon as possible.</p>
                 </div>
 
                 <div className="bg-white rounded-4xl shadow-lg p-8">
@@ -110,12 +111,12 @@ export default function ContactPage() {
                 </div>
 
                 <div className="text-center mt-6">
-                    <a
+                    <Link
                         href="/"
                         className="text-sky-950 hover:text-sky-900 transition-colors text-lg"
                     >
                         ← Back to Home
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
