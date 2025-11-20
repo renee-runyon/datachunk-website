@@ -2,14 +2,11 @@
 
 import Image from "next/legacy/image";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 // components
 import Button from "@/components/Button";
-import Logo from "@/public/image/dcd-logo.png";
 import Beach from "@/public/image/beach.jpg";
-import Cranberry from "@/public/image/cranberry.jpg";
-import Lighthouse from "@/public/image/lighthouse.jpeg";
+import Park from "@/public/image/lsp.jpg";
 import Goldfinch from "@/public/image/goldfinch.jpg";
 import Hr from "@/components/Hr";
 
@@ -51,8 +48,9 @@ export default function MyPage() {
 						</div>
 
 						{/* PAGE TITLE */}
+						{/* PAGE TITLE */}
 						<motion.h1
-							className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold"
+							className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold mt-8 md:mt-0"
 							initial={{ opacity: 0, y: -40 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ delay: 0.2, type: "tween", ease: "easeInOut" }}
@@ -86,13 +84,25 @@ export default function MyPage() {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ delay: 1.1, type: "tween", ease: "easeInOut" }}
 						>
-							<Button variation="primary">
-								<a href="#about">Learn More</a>
+							<Button
+								variation="primary"
+								onClick={() => {
+									document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+								}}
+							>
+								Learn More
 							</Button>
 
-							<Button variation="secondary">
-								<a href="#contact">Contact Us</a>
+
+							<Button
+								variation="secondary"
+								onClick={() => {
+									document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+								}}
+							>
+								Contact Us
 							</Button>
+
 						</motion.div>
 					</motion.div>
 
@@ -103,16 +113,7 @@ export default function MyPage() {
 						whileInView={{ x: 0, opacity: 1 }}
 						transition={{ delay: 0.6, type: "tween", ease: "easeInOut" }}
 					>
-						<div
-							className="
-          relative rounded-4xl overflow-hidden
-          h-[28vh]                /* MUCH SHORTER on mobile */
-          sm:h-[32vh]             /* Slight bump on small tablets */
-          md:h-[45vh]             /* Tall and nice on desktop */
-          w-full md:w-[30vw]
-          grayscale hover:grayscale-0 transition-all duration-300
-        "
-						>
+						<div className="relative rounded-4xl overflow-hidden w-full aspect-[3/4] md:w-[30vw] grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
 								src={Beach}
 								fill
@@ -138,22 +139,13 @@ export default function MyPage() {
 						whileInView={{ x: 0, opacity: 1 }}
 						transition={{ type: "tween", ease: "easeInOut" }}
 					>
-						<div
-							className="
-          relative rounded-4xl overflow-hidden
-          h-[28vh]                /* MUCH SHORTER on mobile */
-          sm:h-[32vh]             /* Slight bump on small tablets */
-          md:h-[45vh]             /* Tall and nice on desktop */
-          w-full md:w-[30vw]
-          grayscale hover:grayscale-0 transition-all duration-300
-        "
-						>
+						<div className="relative rounded-4xl overflow-hidden w-full aspect-[3/4] md:w-[30vw] grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
 								src={Goldfinch}
-								alt="About"
 								fill
-								className="object-cover object-center"
 								placeholder="blur"
+								alt="Goldfinch image"
+								className="object-cover"
 							/>
 						</div>
 					</motion.div>
@@ -175,9 +167,7 @@ export default function MyPage() {
 							More about who we are and the services we offer.
 						</p>
 
-						<Button variation="primary">
-							<Link href="/about">Learn More</Link>
-						</Button>
+						<Button variation="primary" href="/about">Learn More</Button>
 					</motion.div>
 
 				</div>
@@ -196,22 +186,13 @@ export default function MyPage() {
 						whileInView={{ x: 0, opacity: 1 }}
 						transition={{ type: "tween", ease: "easeInOut" }}
 					>
-						<div
-							className="
-          relative bg-transparent rounded-4xl overflow-hidden
-          h-[28vh]                 /* MOBILE: short */
-          sm:h-[32vh]              /* small tablets */
-          md:h-[45vh]              /* DESKTOP tall */
-          w-full md:w-[30vw]
-          grayscale hover:grayscale-0 transition-all duration-300
-        "
-						>
+						<div className="relative rounded-4xl overflow-hidden w-full aspect-[3/4] md:w-[30vw] grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
-								src={Lighthouse}
-								alt="Projects"
+								src={Park}
 								fill
-								className="object-cover object-center"
 								placeholder="blur"
+								alt="Lighthouse image"
+								className="object-cover"
 							/>
 						</div>
 					</motion.div>
@@ -233,9 +214,7 @@ export default function MyPage() {
 							A look at some of our work — past and present.
 						</p>
 
-						<Button variation="primary">
-							<Link href="/projects">Learn More</Link>
-						</Button>
+						<Button variation="primary" href="/projects">Learn More</Button>
 					</motion.div>
 
 				</div>
@@ -254,22 +233,13 @@ export default function MyPage() {
 						whileInView={{ x: 0, opacity: 1 }}
 						transition={{ type: "tween", ease: "easeInOut" }}
 					>
-						<div
-							className="
-          relative bg-transparent rounded-4xl overflow-hidden
-          h-[28vh]                 /* MOBILE short */
-          sm:h-[32vh]              /* small tablets */
-          md:h-[45vh]              /* DESKTOP tall */
-          w-full md:w-[30vw]
-          grayscale hover:grayscale-0 transition-all duration-300
-        "
-						>
+						<div className="relative rounded-4xl overflow-hidden w-full aspect-[3/4] md:w-[30vw] grayscale hover:grayscale-0 transition-all duration-300">
 							<Image
 								src={Beach}
-								alt="Contact"
 								fill
-								className="object-cover object-center"
 								placeholder="blur"
+								alt="Beach image"
+								className="object-cover"
 							/>
 						</div>
 					</motion.div>
