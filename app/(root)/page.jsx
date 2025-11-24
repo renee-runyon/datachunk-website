@@ -128,7 +128,7 @@ export default function MyPage() {
 
 
 			{/* ================= ABOUT ================= */}
-			<section id="home" className="min-h-screen flex items-center pt-8 md:snap-start">
+			<section id="about" className="min-h-screen flex items-center pt-8 md:snap-start">
 				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
 					{/* IMAGE */}
@@ -175,7 +175,7 @@ export default function MyPage() {
 
 
 			{/* ================= PORTFOLIO ================= */}
-			<section id="home" className="min-h-screen flex items-center pt-8 md:snap-start">
+			<section id="projects" className="min-h-screen flex items-center pt-8 md:snap-start">
 				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:px-20">
 
 					{/* IMAGE */}
