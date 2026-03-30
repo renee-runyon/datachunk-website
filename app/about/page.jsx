@@ -10,6 +10,7 @@ import Skills from "./components/skills/skills.jsx";
 import Beach from "@/public/image/beach.jpg";
 import Hr from "@/components/Hr";
 import About from "./components/about/about.jsx";
+import Testimonials from "./components/testimonials/testimonials.jsx";
 
 export default function Page() {
 	useEffect(() => {
@@ -115,6 +116,8 @@ export default function Page() {
 
 				{/* ================= SKILLS ================= */}
 				<Skills />
+				{/* ================= TESTIMONIALS ================= */}
+				<Testimonials />
 			</main>
 		</>
 	);
